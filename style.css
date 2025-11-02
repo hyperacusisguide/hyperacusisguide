@@ -137,7 +137,7 @@ h2 {
   align-items: center;
   padding: 0 12px;
   border-bottom: 1px solid rgba(255,255,255,0.03);
-  z-index: 80; /* below sidebar overlay */
+  z-index: 80; /* below sidebar */
   background: var(--panel);
 }
 
@@ -209,7 +209,7 @@ h2 {
   }
 
   body.hg-app {
-    display: block;
+    display: block;       /* don't use flex on mobile */
     padding: 0;
     overflow: visible;
   }
@@ -219,8 +219,8 @@ h2 {
     position: fixed;
     top: 0;
     left: 0;
-    height: 100%;
     width: 300px;
+    height: 100%;
     transform: translateX(-110%);
     padding-top: var(--header-height);
     z-index: 90;
