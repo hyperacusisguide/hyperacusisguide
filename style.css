@@ -20,8 +20,9 @@
 }
 
 html, body {
-  height: 100%;
   margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 body.hg-app {
@@ -31,7 +32,7 @@ body.hg-app {
   display: flex;
   min-height: 100vh;
   font-size: 0.875rem;
-  overflow: hidden; /* desktop scroll handled by .main */
+  overflow: hidden; /* desktop scroll in .main */
 }
 
 h2 {
@@ -50,7 +51,7 @@ h2 {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  z-index: 90; /* sidebar above header */
+  z-index: 90; /* above header */
   transition: transform 0.28s ease;
 }
 
@@ -129,7 +130,7 @@ h2 {
 =================================== */
 .mobile-header {
   display: none;
-  position: sticky;
+  position: fixed; /* FIXED for Chrome iOS smoothness */
   top: 0;
   left: 0;
   right: 0;
@@ -142,7 +143,7 @@ h2 {
 }
 
 .hamburger {
-  font-size: 22px; /* original size */
+  font-size: 22px;
   border: none;
   background: transparent;
   color: var(--text);
@@ -163,7 +164,7 @@ h2 {
 .main {
   flex: 1;
   padding: 20px 30px;
-  overflow: auto;
+  overflow: auto; /* desktop only */
   -webkit-overflow-scrolling: touch;
 }
 
@@ -209,7 +210,7 @@ h2 {
   }
 
   body.hg-app {
-    display: block;       /* don't use flex on mobile */
+    display: block; /* no flex on mobile */
     padding: 0;
     overflow: visible;
   }
@@ -252,6 +253,7 @@ h2 {
   /* Main content below header */
   .main {
     padding: 16px;
+    padding-top: calc(var(--header-height) + 16px); /* leave space for fixed header */
   }
 
   /* Block background scroll when sidebar open */
