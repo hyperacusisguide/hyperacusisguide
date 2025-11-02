@@ -1,0 +1,265 @@
+/* ------------------------------
+   Root Variables
+--------------------------------*/
+:root {
+  --bg: #202123;        /* Background black-grey */
+  --panel: #242527;     /* Sidebar grey */
+  --text: #ececf1;      /* Main text */
+  --muted: #ffffff;     /* Secondary text */
+  --accent: #10a37f;    /* Green accent */
+  --card: #2a2b32;      /* Card/chat area */
+  --glass: rgba(255,255,255,0.03); /* Semi-transparent overlay */
+}
+
+/* ------------------------------
+   Global Styles
+--------------------------------*/
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+body.hg-app {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ------------------------------
+   Sidebar
+--------------------------------*/
+.sidebar {
+  width: 260px;
+  background: var(--panel);
+  border-right: 1px solid rgba(255,255,255,0.03);
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 6px;
+}
+
+.logo i {
+  font-size: 20px;
+  color: white;
+  opacity: 0.8;
+  margin-right: 0;
+}
+
+.brand-text {
+  font-weight: 400;
+  margin-left: -4px;
+  font-size: 18px;
+}
+
+/* Menu */
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  opacity: 0.6;
+  cursor: pointer;
+  font-weight: 500;
+  text-align: left;
+  width: 100%;
+}
+
+.menu-item:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.menu-item.active {
+  background: rgba(255,255,255,0.1);
+  color: #ffffff;
+  opacity: 1;
+}
+
+.menu-icon {
+  width: 28px;
+  text-align: center;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ------------------------------
+   Close Button (Mobile Sidebar)
+--------------------------------*/
+.close-btn {
+  display: none; /* Hidden by default */
+}
+
+/* ------------------------------
+   Mobile Header
+--------------------------------*/
+.mobile-header {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: transparent;
+  align-items: center;
+  padding: 0 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  z-index: 80;
+}
+
+.hamburger {
+  font-size: 20px;
+  border: none;
+  background: transparent;
+  color: var(--text);
+  opacity: 0.8;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.mobile-title {
+  margin-left: 8px;
+  font-weight: 600;
+}
+
+/* ------------------------------
+   Main Content
+--------------------------------*/
+.main {
+  flex: 1;
+  padding: 20px 30px;
+  overflow: auto;
+}
+
+.card {
+  max-width: 750px;
+}
+
+.card-label {
+  font-size: 18px;
+  font-weight: bold;
+  color: rgba(255,255,255,0.9);
+}
+
+.card-text {
+  font-size: 14px;
+  padding-top: 25px;
+  color: rgba(255,255,255,0.65);
+  line-height: 24px;
+}
+
+/* ------------------------------
+   Pages
+--------------------------------*/
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+/* ------------------------------
+   Media Queries (Mobile)
+--------------------------------*/
+@media (max-width: 899px) {
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 300px;
+    transform: translateX(-110%);
+    transition: transform 0.28s ease;
+    z-index: 90;
+    padding-top: 56px;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  /* Close button (X) in top-right */
+  .close-btn {
+    display: block;
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    font-size: 22px;
+    color: var(--text);
+    opacity: 0.8;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 100;
+  }
+
+  /* Hide brand on mobile sidebar */
+  .brand {
+    display: none;
+  }
+
+  .mobile-header {
+    display: flex;
+    background: rgba(255,255,255,0.02);
+  }
+
+  .mobile-title {
+    font-weight: 400;
+    font-size: 18px;
+  }
+
+  body.hg-app {
+    padding-top: 56px;
+  }
+
+  .main {
+    padding: 22px;
+  }
+}
+
+/* Desktop-specific adjustments */
+@media (min-width: 900px) {
+  .mobile-header {
+    display: none;
+  }
+}
+
+/* ------------------------------
+   Miscellaneous
+--------------------------------*/
+/* Remove outline from focused menu items */
+.menu-item:focus {
+  outline: none;
+}
