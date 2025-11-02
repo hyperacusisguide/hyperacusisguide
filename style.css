@@ -8,7 +8,7 @@
   --muted: #ffffff;
   --accent: #10a37f;
   --card: #2a2b32;
-  --glass: rgba(255,255,255,0.03);
+  --glass: rgba(255, 255, 255, 0.03);
   --header-height: 56px;
 }
 
@@ -31,7 +31,7 @@ body.hg-app {
   display: flex;
   min-height: 100vh;
   font-size: 0.875rem;
-  overflow: hidden; /* desktop scrolling only in .main */
+  overflow: hidden; /* desktop scroll handled by .main */
 }
 
 h2 {
@@ -99,11 +99,11 @@ h2 {
 }
 
 .menu-item:hover {
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .menu-item.active {
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   color: #ffffff;
   opacity: 1;
 }
@@ -129,7 +129,7 @@ h2 {
 =================================== */
 .mobile-header {
   display: none;
-  position: sticky; /* sticky keeps it at the top */
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
@@ -137,7 +137,7 @@ h2 {
   align-items: center;
   padding: 0 12px;
   border-bottom: 1px solid rgba(255,255,255,0.03);
-  z-index: 80; /* keep below sidebar */
+  z-index: 80; /* below sidebar overlay */
   background: var(--panel);
 }
 
@@ -153,8 +153,8 @@ h2 {
 
 .mobile-title {
   margin-left: 8px;
-  font-weight: 600; /* original */
-  font-size: 18px;  /* original */
+  font-weight: 600;
+  font-size: 18px;
 }
 
 /* ================================
@@ -198,19 +198,20 @@ h2 {
 =================================== */
 @media (max-width: 899px) {
 
+  /* Let body scroll, not .main */
   html, body {
     height: auto;
     min-height: 100%;
-    overflow-x: visible;
+    overflow-x: hidden;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    overscroll-behavior-y: contain; /* prevents bounce jitter on Chrome iOS */
+    overscroll-behavior-y: contain;
   }
 
   body.hg-app {
     display: block;
-    overflow: visible; /* allows sticky header to work */
-    min-height: 100%;
+    padding: 0;
+    overflow: visible;
   }
 
   /* Sidebar overlay */
@@ -218,10 +219,11 @@ h2 {
     position: fixed;
     top: 0;
     left: 0;
-    width: 300px;
     height: 100%;
+    width: 300px;
     transform: translateX(-110%);
     padding-top: var(--header-height);
+    z-index: 90;
   }
 
   .sidebar.open {
@@ -242,17 +244,17 @@ h2 {
 
   .brand { display: none; }
 
+  /* Show mobile header */
   .mobile-header {
     display: flex;
   }
 
+  /* Main content below header */
   .main {
-    overflow: visible;
-    min-height: calc(100vh - var(--header-height));
-    padding: 22px;
+    padding: 16px;
   }
 
-  /* Prevent background scroll when sidebar open */
+  /* Block background scroll when sidebar open */
   body.sidebar-open {
     overflow: hidden;
     touch-action: none;
