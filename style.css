@@ -61,7 +61,6 @@ body.hg-app {
   font-size: 20px;
   color: white;
   opacity: 0.8;
-  margin-right: 0;
 }
 
 .brand-text {
@@ -105,26 +104,11 @@ body.hg-app {
   opacity: 1;
 }
 
-.menu-icon {
-  width: 28px;
-  text-align: center;
-}
-
-.sidebar-footer {
-  margin-top: auto;
-  font-size: 12px;
-  color: var(--muted);
-}
-
-.sidebar.open ~ .main {
-  pointer-events: none; /* disable clicks under sidebar */
-}
-
 /* ------------------------------
    Close Button (Mobile Sidebar)
 --------------------------------*/
 .close-btn {
-  display: none; /* Hidden by default */
+  display: none;
 }
 
 /* ------------------------------
@@ -200,6 +184,7 @@ body.hg-app {
    Media Queries (Mobile)
 --------------------------------*/
 @media (max-width: 899px) {
+  /* Sidebar overlay */
   .sidebar {
     position: fixed;
     left: 0;
@@ -216,7 +201,6 @@ body.hg-app {
     transform: translateX(0);
   }
 
-  /* Close button (X) in top-right */
   .close-btn {
     display: block;
     position: absolute;
@@ -231,14 +215,21 @@ body.hg-app {
     z-index: 100;
   }
 
-  /* Hide brand on mobile sidebar */
   .brand {
     display: none;
   }
 
+  /* Mobile Header */
   .mobile-header {
     display: flex;
     background: var(--panel);
+    position: sticky;       /* smoother than fixed */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 80;
+    transform: translateZ(0);
+    will-change: transform;
   }
 
   .mobile-title {
@@ -246,21 +237,38 @@ body.hg-app {
     font-size: 18px;
   }
 
+  /* Body reset for mobile */
+  html, body {
+    -webkit-overflow-scrolling: touch;
+    overflow-y: auto;
+    height: auto;
+  }
 
   body.hg-app {
-    display: block; /* allow normal scroll */
-    padding-top: 56px; /* offset for fixed header */
-    min-height: auto; /* prevent scroll cutoff */
+    display: block;
+    padding-top: 0px;
+    min-height: 100%;
+    overflow-x: hidden;
   }
 
   .main {
-    overflow: visible; /* let body handle scrolling */
+    overflow: visible;
     height: auto;
     padding: 22px;
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  /* Optional: disable background scroll when sidebar open */
+  body.sidebar-open {
+    overflow: hidden;
+    touch-action: none;
   }
 }
 
-/* Desktop-specific adjustments */
+/* ------------------------------
+   Desktop-specific adjustments
+--------------------------------*/
 @media (min-width: 900px) {
   .mobile-header {
     display: none;
@@ -270,7 +278,6 @@ body.hg-app {
 /* ------------------------------
    Miscellaneous
 --------------------------------*/
-/* Remove outline from focused menu items */
 .menu-item:focus {
   outline: none;
 }
