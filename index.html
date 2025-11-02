@@ -220,60 +220,46 @@
   </main>
 
   <!-- JavaScript -->
-<script>
-  // Page navigation
-  const menuButtons = document.querySelectorAll('.menu-item');
-  const pages = document.querySelectorAll('.page');
-  const sidebar = document.querySelector('.sidebar');
-  const mainContent = document.querySelector('.main'); // main container
+  <script>
+    // Page navigation
+    const menuButtons = document.querySelectorAll('.menu-item');
+    const pages = document.querySelectorAll('.page');
+    const sidebar = document.querySelector('.sidebar');
 
-  menuButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const pageId = 'page-' + button.dataset.page;
-
-      // Remove active class from all pages and add to target
-      pages.forEach(page => page.classList.remove('active'));
-      const targetPage = document.getElementById(pageId);
-      if(targetPage) targetPage.classList.add('active');
-
-      // Remove active class from all menu buttons and add to clicked
-      menuButtons.forEach(btn => btn.classList.remove('active'));
-      button.classList.add('active');
-
-      // Close sidebar on mobile
-      sidebar.classList.remove('open');
-
-      // Scroll main content to top
-      mainContent.scrollTop = 0;
-
-      // Optional: scroll window to top if needed
-      window.scrollTo(0, 0);
-    });
-  });
-
-  // Mobile menu toggle
-  const hamburger = document.getElementById('hamburger');
-  const closeBtn = document.getElementById('close-btn');
-
-  hamburger.addEventListener('click', e => {
-    sidebar.classList.add('open');
-    e.stopPropagation();
-  });
-
-  closeBtn.addEventListener('click', () => {
-    sidebar.classList.remove('open');
-  });
-
-  // Close sidebar when clicking outside
-  document.addEventListener('click', e => {
-    if(window.innerWidth <= 899 && sidebar.classList.contains('open')) {
-      if(!sidebar.contains(e.target) && e.target !== hamburger){
+    menuButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const pageId = 'page-' + button.dataset.page;
+        pages.forEach(page => page.classList.remove('active'));
+        const targetPage = document.getElementById(pageId);
+        if(targetPage) targetPage.classList.add('active');
+        menuButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
         sidebar.classList.remove('open');
-      }
-    }
-  });
-</script>
+      });
+    });
 
+    // Mobile menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const closeBtn = document.getElementById('close-btn');
+
+    hamburger.addEventListener('click', e => {
+      sidebar.classList.add('open');
+      e.stopPropagation();
+    });
+
+    closeBtn.addEventListener('click', () => {
+      sidebar.classList.remove('open');
+    });
+
+    // Close sidebar when clicking outside
+    document.addEventListener('click', e => {
+      if(window.innerWidth <= 899 && sidebar.classList.contains('open')) {
+        if(!sidebar.contains(e.target) && e.target !== hamburger){
+          sidebar.classList.remove('open');
+        }
+      }
+    });
+  </script>
 
 </body>
 </html>

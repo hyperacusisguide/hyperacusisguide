@@ -19,9 +19,7 @@
 }
 
 html, body {
-  height: 100%;  
-  margin: 0;
-  padding: 0;
+  height: 100%;
 }
 
 h2 {
@@ -118,6 +116,10 @@ body.hg-app {
   color: var(--muted);
 }
 
+.sidebar.open ~ .main {
+  pointer-events: none; /* disable clicks under sidebar */
+}
+
 /* ------------------------------
    Close Button (Mobile Sidebar)
 --------------------------------*/
@@ -161,11 +163,9 @@ body.hg-app {
    Main Content
 --------------------------------*/
 .main {
-  flex: 1 1 auto; 
-  padding: 20px 30px; /* normal desktop padding */
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS if browser supports it */
-  box-sizing: border-box;
+  flex: 1;
+  padding: 20px 30px;
+  overflow: auto;
 }
 
 .card {
@@ -215,28 +215,6 @@ body.hg-app {
   .sidebar.open {
     transform: translateX(0);
   }
-  
-  .main {
-    /* Top padding includes header + extra spacing */
-    padding-top: calc(56px + 22px); 
-    
-    /* Bottom padding accounts for safe area */
-    padding-bottom: calc(22px + env(safe-area-inset-bottom));
-    
-    /* Side padding for mobile */
-    padding-left: 22px;
-    padding-right: 22px;
-    
-    /* Make flexible height */
-    flex: 1 1 auto;
-    
-    /* Smooth scrolling for long content */
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    
-    /* Ensure main fills viewport for short content */
-    min-height: calc(100vh - 56px);
-  }
 
   /* Close button (X) in top-right */
   .close-btn {
@@ -268,11 +246,16 @@ body.hg-app {
     font-size: 18px;
   }
 
+
   body.hg-app {
-    padding-top: 56px;
+    display: block; /* allow normal scroll */
+    padding-top: 56px; /* offset for fixed header */
+    min-height: auto; /* prevent scroll cutoff */
   }
 
   .main {
+    overflow: visible; /* let body handle scrolling */
+    height: auto;
     padding: 22px;
   }
 }
