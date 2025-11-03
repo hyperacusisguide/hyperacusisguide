@@ -1,0 +1,214 @@
+/* Root variables */
+:root {
+  --bg: #323232;
+  --panel: #323232;
+  --text: #e0e0e0;
+  --hover: rgba(255, 255, 255, 0.08);
+  --accent: #b0b0b0;
+  --article: #393939;
+  --focus: rgba(255, 255, 255, 0.06);
+  --logo: #7dc895;
+  --ear: #e8c761;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+/* Header - always visible and sticky */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  height: 60px;
+  background-color: var(--panel);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  z-index: 1000;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.1rem;
+  font-weight: 400;
+  padding-left: 20px;
+  color: var(--text);
+}
+
+header .logo i {
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+/* Hamburger button (only visible on mobile) */
+#hamburger {
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+  display: none;
+}
+
+/* Sidebar */
+nav#sidebar {
+  width: 260px;
+  background-color: var(--panel);
+  padding-top: 70px; /* leave space for header */
+  padding-left: 20px;
+  padding-right: 20px;
+  flex-shrink: 0;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  font-size: 0.8rem;
+}
+
+nav#sidebar ul {
+  list-style: none;
+}
+
+nav#sidebar ul li {
+  margin: 0.4rem 0;
+}
+
+nav#sidebar ul li a {
+  text-decoration: none;
+  color: var(--accent);
+  padding: 0.5rem 1rem;
+  display: block;
+  border-radius: 0.25rem;
+  transition: background 0s;
+}
+
+nav#sidebar ul li a:hover {
+  background-color: var(--hover);
+  color: var(--text);
+}
+
+nav#sidebar ul li a:focus {
+  background-color: var(--focus);
+  color: var(--text);
+}
+
+nav#sidebar ul li a.active {
+  background-color: var(--focus);
+  color: var(--text);
+}
+
+/* Main content */
+main {
+  flex: 1;
+  margin-left: 260px;
+  margin-top: 4.8rem;
+  margin-right: 25px;
+  margin-bottom: 2rem;
+}
+
+main article {
+  max-width: 700px;
+  background: var(--article);
+  font-size: 0.8rem;
+  line-height: 1.7;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-radius: 0.6rem;
+  color: var(--text);
+}
+
+/* Headings inside article */
+main article h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 1.6rem;
+  margin-bottom: 0.6rem;
+  color: var(--accent);
+}
+
+main article h1 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-top: 0rem;
+  margin-bottom: 0.6rem;
+  color: var(--text);
+}
+
+/* Paragraph spacing */
+main article p {
+  margin-bottom: 1rem;
+}
+
+/* List spacing and indentation */
+main article ul {
+  margin: 0.5rem 0 1.2rem 1.4rem;
+  padding-left: 1.2rem;
+  list-style-position: outside;
+}
+
+main article li {
+  margin-bottom: 0.4rem;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  #hamburger {
+    display: block;
+    padding-right:5px;
+    color: var(--text);
+  }
+
+  nav#sidebar {
+    top: 60px; /* below header */
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: calc(100% - 60px);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    padding-top: 1rem;
+  }
+
+  nav#sidebar.open {
+    transform: translateY(0);
+  }
+
+  header .logo {
+  padding-left: 10px;
+}
+
+  main {
+    margin-left: 25px;
+  }
+
+  main article {
+  background: transparent;
+  font-size: 0.8rem;
+  line-height: 1.7;
+  padding-left: 0rem;
+  padding-right: 0rem;
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+  color: var(--text);
+}
+}

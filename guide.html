@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minimalist Dark Mode Website</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <h1 class="logo">
+    <i class="fa-solid fa-ear-listen"></i>
+    Hyperacusis Guide</h1>
+    <button id="hamburger">&#9776;</button>
+  </header>
+
+  <nav id="sidebar">
+    <ul>
+      <li><a href="index.html">Our Purpose</a></li>
+      <li><a href="guide.html">Precautionary Guide</a></li>
+      <li><a href="imaging.html">Diagnostic Imaging</a></li>
+      <li><a href="#">Resources</a></li>
+      <li><a href="#">Social</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <article>
+      <h1>Precautionary Guide For New Hyperacusis Patients</h1>
+          <h2>Purpose</h2>
+          <p>To stabilize symptoms, prevent worsening, ensure accurate diagnosis and treatment planning, and give the best chance of improvement.</p>
+
+          <h2>Important Note</h2>
+          <p>This protocol offers cautionary advice based on evidence of proven worsening from sound exposures and aims to support recovery in the best way possible...</p>
+
+          <h2>1. Controlled, Predictable Sound Environment</h2>
+          <ul>
+            <li>Create a quiet home base where sound levels are predictable and consistently below your discomfort threshold.</li>
+            <li>Eliminate sudden, unpredictable noises (door slams, kitchen clatter, TV/radio, etc.).</li>
+            <li>Avoid any sound that causes pain, burning, flare-ups, or worsening of symptoms.</li>
+          </ul>
+
+          <h2>2. Protective Equipment Use</h2>
+          <ul>
+            <li>Use double protection: high-NRR foam earplugs plus quality over-the-ear earmuffs such as Peltor X5A.</li>
+            <li>Keep protection on for the full duration of the trip.</li>
+            <li>Keep spare plugs and muffs accessible at all times.</li>
+          </ul>
+
+          <h2>3. Digital Audio Elimination</h2>
+          <ul>
+            <li>No headphones, earbuds, or speakers playing music, podcasts, or videos.</li>
+            <li>Use live captioning, text, or email options instead of phone call audio.</li>
+            <li>Limit non-essential media until stability improves.</li>
+          </ul>
+
+          <h2>4. Homebound Voluntary Precaution</h2>
+          <ul>
+            <li>Minimize leaving home except for essential medical visits.</li>
+            <li>Maintain a low-noise environment through planned errands and deliveries.</li>
+          </ul>
+
+          <h2>5. Diagnostic Imaging</h2>
+          <ul>
+            <li>Schedule high-resolution CT scan of the temporal bones (≤ 0.6 mm slice thickness) to rule out structural causes.</li>
+            <li>Ensure both sides are imaged.</li>
+          </ul>
+
+          <h2>6. Specialist Review</h2>
+          <ul>
+            <li>Review imaging results with an ENT, otologist, or neurotologist experienced in relevant procedures.</li>
+          </ul>
+
+          <h2>7. Treatment Planning</h2>
+          <ul>
+            <li>Discuss possible interventions after imaging.</li>
+          </ul>
+
+          <h2>7.5. Time & Preparedness</h2>
+          <ul>
+            <li>Improvement takes time and varies by individual. Early preparedness is important.</li>
+          </ul>
+
+          <h2>8. Medication Caution</h2>
+          <ul>
+            <li>Avoid psychiatric medications unless absolutely necessary.</li>
+            <li>Use benzodiazepines only rarely, short-term if needed.</li>
+          </ul>
+
+          <h2>9. Lifestyle & Mental Health Support</h2>
+          <ul>
+            <li>Gentle movement practices (yoga, Tai Chi, Qigong).</li>
+            <li>Meditation, prayer, and quiet time in nature.</li>
+            <li>Light-to-moderate exercise within safe sound limits.</li>
+            <li>Healthy diet and stress management.</li>
+          </ul>
+
+          <h2>10. General Precautions</h2>
+          <ul>
+            <li>Avoid trial-and-error sound therapy.</li>
+            <li>Prioritize rest, sleep, and stress management.</li>
+            <li>Avoid procedures that may worsen your condition (e.g., MRI, dental ultrasonic cleaning).</li>
+          </ul>
+
+          <h2>11. Workplace & Disability Accommodations</h2>
+          <ul>
+            <li>Explore FMLA, ADA accommodations, disability benefits, and work-from-home options to minimize audio exposure.</li>
+          </ul>
+    </article>
+  </main>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const sidebar = document.getElementById('sidebar');
+
+    hamburger.addEventListener('click', () => {
+      sidebar.classList.toggle('open');
+    });
+
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('#sidebar ul li a').forEach(link => {
+    const linkPage = link.getAttribute('href');
+    if (linkPage === currentPage) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+
+  </script>
+</body>
+</html>

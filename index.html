@@ -3,85 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dark Mobile Story</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Minimalist Dark Mode Website</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-
-  <!-- Sticky Header -->
-  <header class="header">
-    <button class="menu-btn" aria-label="Open Menu">☰</button>
-    <div class="header-title">Nightfall Tales</div>
+  <header>
+    <h1 class="logo">
+    <i class="fa-solid fa-ear-listen"></i>
+    Hyperacusis Guide</h1>
+    <button id="hamburger">&#9776;</button>
   </header>
 
-  <!-- Full-screen Menu -->
-  <nav class="menu-overlay" id="menuOverlay">
-    <button class="close-menu" id="closeMenu" aria-label="Close Menu">✕</button>
-    <ul class="menu-list">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Stories</a></li>
-      <li><a href="#">Authors</a></li>
-      <li><a href="#">Genres</a></li>
-      <li><a href="#">Contact</a></li>
+  <nav id="sidebar">
+    <ul>
+      <li><a href="index.html">Our Purpose</a></li>
+      <li><a href="guide.html">Precautionary Guide</a></li>
+      <li><a href="imaging.html">Diagnostic Imaging</a></li>
+      <li><a href="#">Resources</a></li>
+      <li><a href="#">Social</a></li>
     </ul>
   </nav>
 
-  <!-- Main Content -->
-  <main class="main-content">
-    <article class="story">
-      <h1>The Whispering Forest</h1>
-      <p>
-        At the edge of the village, where the mist clung to the ancient pines, Mara stepped lightly, her eyes tracing the shadows that danced between the trees. The air smelled of damp earth and secrets. Each step whispered beneath her feet, a soft echo of what once was.
-      </p>
-      <p>
-        A fox appeared briefly among the roots, its eyes reflecting the faint glow of fireflies. Mara paused, sensing that the forest was alive, listening. Leaves rustled in a language she almost understood. Somewhere, a stream murmured tales of time itself.
-      </p>
-      <p>
-        She walked deeper, heart quickening, until the path opened into a clearing. Moonlight spilled like silver across the ground. And there, beneath the oldest oak, a faint shimmer beckoned, promising a story she would never forget.
-      </p>
-      <p>
-        Mara stepped forward, and the forest exhaled, welcoming her into the night.
-      </p>
-      <p>
-        Hours passed as she wandered among the trees. The branches arched overhead like the vaulted ceilings of a cathedral, and somewhere far off, an owl hooted. Shadows shifted, forming shapes that might have been animals—or perhaps the memories of the forest itself.
-      </p>
-      <p>
-        She found a hidden pond, its surface perfectly still, reflecting the stars above. Kneeling, Mara traced her fingers along the cool water and glimpsed her own reflection, though it seemed older, wiser, touched by unseen forces. The water whispered her name, soft as a sigh.
-      </p>
-      <p>
-        On the far bank, mushrooms glowed faintly, illuminating an overgrown path. Compelled, she followed it, feeling the soil sink beneath her boots. Each step revealed strange carvings on tree trunks—symbols she could not read, yet felt deeply, as if they spoke directly to her bones.
-      </p>
-      <p>
-        A breeze carried the scent of lavender and pine. The air was thick with secrets, promises, and forgotten stories. Mara realized that the forest had a rhythm, a pulse, and if she listened closely, she could hear it beneath the ordinary sounds: the rustle of leaves, the distant drip of water, the flutter of wings.
-      </p>
-      <p>
-        Suddenly, she came upon a fallen log, ancient and covered in moss. Sitting there, she closed her eyes and let the forest surround her. Visions of long-gone travelers, of hidden groves and moonlit clearings, drifted past. It was as if the forest had absorbed every story ever whispered into its depths and now offered them to her in fragments.
-      </p>
-      <p>
-        When she opened her eyes, a small creature—a hare with silver-tipped fur—watched her curiously. Its gaze was calm, wise, almost human in its understanding. Mara felt no fear. Instead, she felt that she had been chosen, for reasons unknown, to witness the forest’s living memory.
-      </p>
-      <p>
-        By the time dawn crept over the horizon, painting the sky with pale gray and violet, Mara emerged from the forest. She carried with her not a single object, but countless stories, whispers, and the quiet knowledge that the world was deeper, stranger, and more alive than she had ever imagined.
-      </p>
-      <p>
-        And though she returned to the village, nothing could erase the sensation of the forest’s heartbeat lingering in her chest. Each night thereafter, she would feel the pull of the shadows, the invitation of the trees, and know that the forest was always watching, always waiting for the next story to unfold.
-      </p>
+  <main>
+    <article>
+    This is a test
     </article>
   </main>
 
   <script>
-    const menuBtn = document.querySelector('.menu-btn');
-    const menuOverlay = document.getElementById('menuOverlay');
-    const closeMenu = document.getElementById('closeMenu');
+    const hamburger = document.getElementById('hamburger');
+    const sidebar = document.getElementById('sidebar');
 
-    menuBtn.addEventListener('click', () => {
-      menuOverlay.classList.add('open');
+    hamburger.addEventListener('click', () => {
+      sidebar.classList.toggle('open');
     });
 
-    closeMenu.addEventListener('click', () => {
-      menuOverlay.classList.remove('open');
-    });
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('#sidebar ul li a').forEach(link => {
+    const linkPage = link.getAttribute('href');
+    if (linkPage === currentPage) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+
   </script>
-
 </body>
 </html>
