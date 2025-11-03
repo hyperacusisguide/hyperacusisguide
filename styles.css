@@ -8,7 +8,7 @@
   --article: #393939;
   --focus: rgba(255, 255, 255, 0.06);
   --logo: #7dc895;
-  --ear: #e8c761;
+  --ear: #c76041;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -64,7 +64,7 @@ header .logo {
 
 header .logo i {
   font-size: 1.1rem;
-  color: var(--bg);
+  color: var(--text);
   background-color: var(--ear);
   padding: 0.3rem;
   border-radius: 0.2rem;
@@ -199,7 +199,7 @@ main article li {
   }
 
   header .logo {
-    padding-left: 10px;
+    padding-left: 7px;
   }
 
   nav#sidebar {
