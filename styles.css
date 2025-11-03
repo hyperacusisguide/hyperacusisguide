@@ -23,12 +23,15 @@
 
 html, body {
   height: 100%;
-  overflow: hidden; /* Prevent rubber-band scroll on iOS */
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+  overflow-x: hidden;
 }
 
 body {
-  display: block; /* Disable flex for body on mobile iOS */
-  background-color: var(--bg);
+  display: flex;
+  flex-direction: column; /* fixes the bottom line issue */
   color: var(--text);
 }
 
@@ -45,7 +48,7 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 0 1rem;
-  z-index: 1200;
+  z-index: 1200; /* above sidebar */
 }
 
 header .logo {
@@ -76,7 +79,7 @@ header .logo i {
 /* Sidebar */
 nav#sidebar {
   width: 260px;
-  background-color: var(--panel);
+  background-color: var(--article);
   padding-top: 70px; /* leave space for header */
   padding-left: 20px;
   padding-right: 20px;
@@ -123,35 +126,41 @@ nav#sidebar ul li a.active {
 
 /* Main content */
 main {
+  flex: 1 1 auto; /* fills remaining space under header */
   margin-left: 260px;
-  margin-top: 60px; /* leave space for fixed header */
-  margin-right: 25px;
-  height: calc(100vh - 60px); /* full height minus header */
+  margin-top: 54px; /* header height */
   overflow-y: auto;
-  -webkit-overflow-scrolling: touch; /* momentum scrolling on iOS */
-  padding: 1rem 0;
+  -webkit-overflow-scrolling: touch;
+  padding: 0;
   position: relative;
   z-index: 100;
+  background: var(--bg);
+}
+
+.section-title{
+    font-weight:bold;
+    color: var(--text)
+
 }
 
 main article {
   max-width: 700px;
-  background: var(--article);
+  background: var(--bg);
   font-size: 0.8rem;
   line-height: 1.7;
   padding: 1.5rem 2rem;
   border-radius: 0.6rem;
-  color: var(--text);
-  margin: 0 auto;
+  color: var(--accent);
+  margin: 0; /* left-aligned */
 }
 
 /* Headings inside article */
 main article h2 {
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 600;
   margin-top: 1.6rem;
   margin-bottom: 0.6rem;
-  color: var(--accent);
+  color: var(--text);
 }
 
 main article h1 {
@@ -197,13 +206,17 @@ main article li {
     transform: translateY(-100%);
     transition: transform 0.3s ease;
     padding-top: 1rem;
-    font-size: 0.875rem;
-    background-color: var(--panel); /* ensure sidebar is visible */
+    font-size: 0.9rem;
+    background-color: var(--panel); /* visible */
     z-index: 1100; /* above main content */
   }
 
   nav#sidebar.open {
     transform: translateY(0);
+  }
+
+  nav#sidebar ul li a {
+    padding: 0.8rem 1rem;
   }
 
   main {
@@ -214,9 +227,9 @@ main article li {
   }
 
   main article {
-    background: transparent; /* visible background */
+    background: transparent;
     padding: 0.5rem;
-    margin-bottom: 8rem;
+    margin-bottom: 8rem; /* space for scrolling */
     font-size: 0.9rem;
     border-radius: 0.6rem;
   }
