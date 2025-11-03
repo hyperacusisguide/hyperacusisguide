@@ -234,7 +234,7 @@ main article li {
   main article {
     background: transparent;
     padding: 0.5rem;
-    margin-bottom: 2rem; /* space for scrolling */
+    margin-bottom: 0rem; /* space for scrolling */
     font-size: 0.9rem;
     border-radius: 0.6rem;
   }
