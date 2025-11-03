@@ -21,15 +21,11 @@
   font-family: 'Inter', sans-serif;
 }
 
-html {
-  overflow-y: scroll; /* prevents horizontal shift when scrollbar appears */
-}
-
 body {
+  display: flex;
   min-height: 100vh;
   background-color: var(--bg);
   color: var(--text);
-  /* Removed flex to avoid iOS Chrome fixed element jitter */
 }
 
 /* Header - always visible and sticky */
@@ -46,11 +42,6 @@ header {
   justify-content: space-between;
   padding: 0 1rem;
   z-index: 1000;
-
-  /* iOS Chrome smooth rendering */
-  -webkit-backface-visibility: hidden;
-  -webkit-transform: translateZ(0);
-  will-change: transform;
 }
 
 header .logo {
@@ -90,11 +81,6 @@ nav#sidebar {
   top: 0;
   height: 100%;
   font-size: 0.8rem;
-
-  /* iOS Chrome smooth rendering */
-  -webkit-backface-visibility: hidden;
-  -webkit-transform: translateZ(0);
-  will-change: transform;
 }
 
 nav#sidebar ul {
@@ -119,7 +105,11 @@ nav#sidebar ul li a:hover {
   color: var(--text);
 }
 
-nav#sidebar ul li a:focus,
+nav#sidebar ul li a:focus {
+  background-color: var(--focus);
+  color: var(--text);
+}
+
 nav#sidebar ul li a.active {
   background-color: var(--focus);
   color: var(--text);
@@ -127,12 +117,11 @@ nav#sidebar ul li a.active {
 
 /* Main content */
 main {
+  flex: 1;
   margin-left: 260px;
   margin-top: 4.8rem;
   margin-right: 25px;
   margin-bottom: 2rem;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch; /* enables smooth iOS momentum scroll */
 }
 
 main article {
@@ -140,7 +129,10 @@ main article {
   background: var(--article);
   font-size: 0.8rem;
   line-height: 1.7;
-  padding: 1.5rem 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
   border-radius: 0.6rem;
   color: var(--text);
 }
@@ -182,7 +174,7 @@ main article li {
 @media (max-width: 768px) {
   #hamburger {
     display: block;
-    padding-right: 5px;
+    padding-right:5px;
     color: var(--text);
   }
 
@@ -203,18 +195,21 @@ main article li {
   }
 
   header .logo {
-    padding-left: 10px;
-  }
+  padding-left: 10px;
+}
 
   main {
     margin-left: 25px;
   }
 
   main article {
-    background: transparent;
-    font-size: 0.8rem;
-    line-height: 1.7;
-    padding: 0;
-    color: var(--text);
-  }
+  background: transparent;
+  font-size: 0.8rem;
+  line-height: 1.7;
+  padding-left: 0rem;
+  padding-right: 0rem;
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+  color: var(--text);
+}
 }
