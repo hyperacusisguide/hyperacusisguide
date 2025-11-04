@@ -244,17 +244,20 @@ main article li {
   }
 
   /* Keep hover disabled except for active item */
-  nav#sidebar ul li a:not(.active):hover {
-    background-color: background-color: var(--bg);
-    color: var(--accent);
-  }
+/* Keep hover disabled for non-active items on mobile */
+nav#sidebar ul li a:not(.active):hover {
+  background-color: var(--bg);
+  color: var(--accent);
+}
 
-  /* Active tap state */
-  nav#sidebar ul li a.focus,
-  nav#sidebar ul li a.active {
-    background-color: var(--hover);
-    color: var(--text);
-  }
+/* Active and focus/tap state */
+nav#sidebar ul li a.active,
+nav#sidebar ul li a:focus,
+nav#sidebar ul li a:active {
+  background-color: var(--hover);
+  color: var(--text);
+}
+
 
   main article {
     background: transparent;
