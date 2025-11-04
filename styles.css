@@ -243,23 +243,17 @@ main article li {
     padding: 0.8rem 1rem;
   }
 
-  nav#sidebar ul li a {
-    -webkit-tap-highlight-color: rgba(0,0,0,0); /* Remove tap highlight */
-    touch-action: manipulation; /* Allow proper tap */
-  }
-
-  /* Disable hover except for active */
+  /* Keep hover disabled except for active item */
   nav#sidebar ul li a:not(.active):hover {
-    background-color: unset;
+    background-color: background-color: var(--bg);
     color: var(--accent);
   }
 
-  /* Ensure focus works on tap */
-  nav#sidebar ul li a:focus,
-  nav#sidebar ul li a:active {
+  /* Active tap state */
+  nav#sidebar ul li a.focus,
+  nav#sidebar ul li a.active {
     background-color: var(--hover);
     color: var(--text);
-    outline: none;
   }
 
   main article {
