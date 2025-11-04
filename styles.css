@@ -85,7 +85,7 @@ header .logo i {
 nav#sidebar {
   width: 260px;
   background-color: var(--article);
-  padding-top: 74px; /* leave space for header */
+  padding-top: 70px; /* leave space for header */
   padding-left: 20px;
   padding-right: 20px;
   flex-shrink: 0;
@@ -110,7 +110,7 @@ nav#sidebar ul li a {
   color: var(--accent);
   padding: 0.6rem 1rem;
   display: block;
-  border-radius: 0.3rem;
+  border-radius: 0.30rem;
   transition: background 0s;
 }
 
@@ -133,7 +133,7 @@ nav#sidebar ul li a.active {
 main {
   flex: 1 1 auto; /* fills remaining space under header */
   margin-left: 260px;
-  margin-top: 62px; /* header height */
+  margin-top: 58px; /* header height */
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   padding: 0;
@@ -174,6 +174,7 @@ main article h1 {
   margin-top: 0rem;
   margin-bottom: 0.6rem;
   color: var(--text);
+
 }
 
 /* Paragraph spacing */
