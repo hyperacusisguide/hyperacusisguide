@@ -76,7 +76,7 @@ header .logo i {
 /* Hamburger button (only visible on mobile) */
 #hamburger {
   font-size: 1.8rem;
-  margin-right:4px;
+  margin-right: 4px;
   background: none;
   border: none;
   color: var(--text);
@@ -136,7 +136,7 @@ nav#sidebar ul li a.active {
 main {
   flex: 1 1 auto; /* fills remaining space under header */
   margin-left: 260px;
-  margin-top: 66px; /* header height */
+  margin-top: 60px; /* header height */
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   padding: 0;
@@ -156,7 +156,7 @@ main article {
   background: var(--bg);
   font-size: 0.8rem;
   line-height: 1.7;
-  padding: 17px 2rem;
+  padding: 23px 2rem;
   border-radius: 0.6rem;
   color: var(--accent);
   margin: 0; /* left-aligned */
@@ -228,7 +228,7 @@ header .logo i {
     height: calc(100% - 60px);
     transform: translateY(-100%);
     transition: transform 0.3s ease;
-    padding-top: 30px;
+    padding-top: 24px;
     font-size: 0.9rem;
     background-color: var(--bg); /* visible */
     z-index: 1100; /* above main content */
