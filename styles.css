@@ -244,8 +244,7 @@ main article li {
   }
 
   /* Disable hover on mobile links */
-  nav#sidebar ul li a:hover,
-  nav#sidebar ul li a:focus {
+  nav#sidebar ul li a:hover {
     background-color: unset;
     color: var(--accent);
   }
