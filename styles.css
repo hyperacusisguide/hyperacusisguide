@@ -25,7 +25,6 @@
 }
 
 html, body {
-  /* Using 100% is fine here as the main content is scrollable */
   height: 100%; 
   margin: 0;
   padding: 0;
@@ -34,10 +33,12 @@ html, body {
   font-family: 'Inter', sans-serif;
 }
 
+/* ?? FIX 1: Remove flex from body so scrolling happens on the document */
 body {
-  display: flex;
-  flex-direction: column; 
+  /* display: flex; REMOVED */
+  /* flex-direction: column; REMOVED */
   color: var(--text);
+  min-height: 100%; /* Ensures body can grow with content */
 }
 
 /* Header - always visible and sticky */
@@ -95,6 +96,7 @@ nav#sidebar {
   flex-shrink: 0;
   position: fixed;
   top: 0;
+  /* Using 100dvh for fixed sidebar for best mobile compatibility */
   height: 100dvh; 
   font-size: 0.8rem;
   overflow-y: auto;
@@ -135,11 +137,15 @@ nav#sidebar ul li a.active {
 
 /* Main content */
 main {
-  flex: 1 1 auto; /* fills remaining space under header */
-  margin-left: 260px;
-  margin-top: 60px; /* header height */
-  overflow-y: auto;
+  /* flex: 1 1 auto; REMOVED */
+  /* ?? FIX 2: Remove isolated scrolling from the main content */
+  /* overflow-y: auto; REMOVED */
   -webkit-overflow-scrolling: touch;
+  
+  /* Retain margins to clear fixed header/sidebar */
+  margin-left: 260px;
+  margin-top: 60px; 
+  
   padding: 0;
   position: relative;
   z-index: 100;
@@ -149,7 +155,6 @@ main {
 .section-title{
   font-weight:bold;
   color: var(--text)
-
 }
 
 main article {
@@ -178,7 +183,6 @@ main article h1 {
   margin-top: 0rem;
   margin-bottom: 0.6rem;
   color: var(--text);
-
 }
 
 /* Paragraph spacing */
@@ -226,6 +230,7 @@ main article li {
     top: 60px; /* below header */
     left: 0;
     width: 100%;
+    /* Use 100dvh and subtract the fixed header height */
     height: calc(100dvh - 60px); 
     transform: translateY(-100%);
     transition: transform 0.3s ease;
@@ -244,15 +249,18 @@ main article li {
   }
 
   main {
+    /* Set margin-left to 0 on mobile */
     margin-left: 0;
     margin-right: 0;
     padding: 1rem 1rem;
+    /* Ensure content is positioned below the fixed header */
+    margin-top: 60px;
   }
 
   main article {
     background: transparent;
     padding: 0.5rem;
-    margin-bottom: 0rem; /* space for scrolling */
+    margin-bottom: 0rem; 
     font-size: 0.9rem;
     border-radius: 0.6rem;
   }
