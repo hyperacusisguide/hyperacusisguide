@@ -1,4 +1,4 @@
-/* ---------- Root variables ---------- */
+/* ---------- Root Variables ---------- */
 :root {
   --bg: #252526;
   --panel: #2d2d30;
@@ -30,7 +30,6 @@ html, body {
   padding: 0;
   background-color: var(--bg);
   overflow-x: hidden;
-  font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -39,7 +38,7 @@ body {
   color: var(--text);
 }
 
-/* ---------- Header (Desktop default) ---------- */
+/* ---------- Header (Desktop) ---------- */
 header {
   position: fixed;
   top: 0;
@@ -52,7 +51,7 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 0 1rem;
-  z-index: 1200; 
+  z-index: 1200;
 }
 
 header .logo {
@@ -73,7 +72,7 @@ header .logo i {
   border-radius: 0.2rem;
 }
 
-/* ---------- Hamburger button ---------- */
+/* ---------- Hamburger Button ---------- */
 #hamburger {
   font-size: 1.8rem;
   margin-right: 4px;
@@ -88,16 +87,13 @@ header .logo i {
 nav#sidebar {
   width: 260px;
   background-color: var(--menu);
-  padding-top: 80px; 
-  padding-left: 20px;
-  padding-right: 20px;
-  flex-shrink: 0;
+  padding: 80px 20px 0 20px;
   position: fixed;
   top: 0;
   height: 100%;
   font-size: 0.8rem;
   overflow-y: auto;
-  -webkit-overflow-scrolling: touch; 
+  -webkit-overflow-scrolling: touch;
 }
 
 nav#sidebar ul {
@@ -113,8 +109,7 @@ nav#sidebar ul li a {
   color: var(--accent);
   padding: 0.6rem 1rem;
   display: block;
-  border-radius: 0.30rem;
-  transition: background 0s;
+  border-radius: 0.3rem;
 }
 
 nav#sidebar ul li a:hover,
@@ -128,12 +123,12 @@ nav#sidebar ul li a.active {
   color: var(--text);
 }
 
-/* ---------- Main content (Desktop) ---------- */
+/* ---------- Main Content (Desktop) ---------- */
 main {
-  flex: 1 1 auto; 
+  flex: 1 1 auto;
   margin-left: 260px;
   margin-top: 60px; /* header height */
-  overflow-y: visible; 
+  overflow-y: visible;
   -webkit-overflow-scrolling: touch;
   padding: 0;
   position: relative;
@@ -149,22 +144,20 @@ main article {
   padding: 23px 2rem;
   border-radius: 0.6rem;
   color: var(--accent);
-  margin: 0; 
+  margin: 0;
 }
 
 main article h1 {
   font-size: 1.1rem;
   font-weight: 400;
-  margin-top: 0;
-  margin-bottom: 0.6rem;
+  margin: 0 0 0.6rem 0;
   color: var(--text);
 }
 
 main article h2 {
   font-size: 0.875rem;
   font-weight: 600;
-  margin-top: 0.7rem;
-  margin-bottom: 0.6rem;
+  margin: 0.7rem 0 0.6rem 0;
   color: var(--text);
 }
 
@@ -186,20 +179,16 @@ main article li {
 @media (max-width: 768px) {
   /* Header scrolls on mobile */
   header {
-    position: static; 
-    height: 80px;
+    position: static;
+    height: 70px;
   }
 
-  /* Main content offset removed */
   main {
-    margin-left: 0;
-    margin-right: 0;
-    margin-top: 0;
-    height: auto; 
+    margin: 0;
+    height: auto;
     padding: 1rem;
   }
 
-  /* Show hamburger */
   #hamburger {
     display: block;
   }
@@ -210,10 +199,10 @@ main article li {
 
   /* Sidebar overlays content */
   nav#sidebar {
-    top: 0; 
+    top: 0;
     height: 100vh;
     width: 100%;
-    padding-top: 110px;
+    padding-top: 94px;
     transform: translateY(-100%);
     transition: transform 0.3s ease;
     font-size: 0.9rem;
@@ -232,7 +221,7 @@ main article li {
   main article {
     background: transparent;
     padding: 0.5rem;
-    margin-bottom: 0; 
+    margin-bottom: 0;
     font-size: 0.9rem;
     border-radius: 0.6rem;
   }
@@ -243,15 +232,14 @@ main article li {
 
   /* ---------- Lock scroll when menu is open ---------- */
   body.menu-open {
-    overflow: hidden; /* prevents scrolling behind sidebar */
-    height: 100vh !important; /* prevents scroll inside main */
-        position: fixed;
+    position: fixed;
     width: 100%;
+    height: 100vh;
+    overflow: hidden;
   }
 
-    body.menu-open header {
-    height: 80px !important;   /* force header to keep mobile height */
-    flex-shrink: 0 !important; /* prevent it from shrinking in flex layout */
+  body.menu-open header {
+    height: 70px !important;
+    flex-shrink: 0 !important;
   }
-
 }

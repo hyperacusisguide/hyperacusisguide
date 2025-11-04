@@ -154,26 +154,6 @@
     </article>
   </main>
 
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const sidebar = document.getElementById('sidebar');
-
-    hamburger.addEventListener('click', () => {
-      sidebar.classList.toggle('open');
-      document.body.classList.toggle('menu-open');
-    });
-
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('#sidebar ul li a').forEach(link => {
-    const linkPage = link.getAttribute('href');
-    if (linkPage === currentPage) {
-      link.classList.add('active');
-    } else {
-      link.classList.remove('active');
-    }
-  });
-
-
-  </script>
+<script src="script.js"></script>
 </body>
 </html>

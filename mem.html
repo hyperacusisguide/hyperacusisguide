@@ -5,13 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hyperacusis Guide -  MEM & TTTS</title>
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
   <header>
     <h1 class="logo">
-    <i class="fa-solid fa-ear-listen"></i>
     Hyperacusis Guide</h1>
     <button id="hamburger">&#9776;</button>
   </header>
@@ -41,24 +43,6 @@
   <p>Tonic tensor tympani syndrome (TTTS) and middle ear myoclonus (MEM) are involuntary muscle disorders of the middle ear that can closely overlap with, or develop secondary to, hyperacusis and noxacusis. In TTTS, the tensor tympani muscle—which normally contracts reflexively in response to loud sounds—becomes overactive or persistently tense, often triggered by even moderate noises or anticipation of sound. This chronic contraction can cause sensations of fullness, fluttering, pressure, or pain deep in the ear, and may exacerbate sound intolerance by increasing mechanical tension on the eardrum and ossicles.</p><p>MEM involves involuntary, repetitive contractions of the tensor tympani and/or stapedius muscles, sometimes producing audible clicking or thumping sounds perceived by the patient or even an examiner. Both conditions are thought to arise from heightened central and peripheral auditory reflexes, often following acoustic trauma, stress, or prolonged sound sensitivity. In individuals with hyperacusis or noxacusis, the auditory system becomes hypersensitized, and these protective reflexes can become maladaptive—firing excessively or continuously in response to normal environmental sounds. Over time, this can reinforce a cycle of pain, muscle tension, and heightened auditory gain, contributing to the persistence and severity of sound-induced discomfort.</p></article>
   </main>
   
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const sidebar = document.getElementById('sidebar');
-
-    hamburger.addEventListener('click', () => {
-      sidebar.classList.toggle('open');
-    });
-
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('#sidebar ul li a').forEach(link => {
-    const linkPage = link.getAttribute('href');
-    if (linkPage === currentPage) {
-      link.classList.add('active');
-    } else {
-      link.classList.remove('active');
-    }
-  });
-
-  </script>
+<script src="script.js"></script>
 </body>
 </html>
