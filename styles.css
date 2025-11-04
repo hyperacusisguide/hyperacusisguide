@@ -25,6 +25,7 @@
 }
 
 html, body {
+  /* Ensure full height potential for document scroll */
   height: 100%; 
   margin: 0;
   padding: 0;
@@ -33,12 +34,10 @@ html, body {
   font-family: 'Inter', sans-serif;
 }
 
-/* ?? FIX 1: Remove flex from body so scrolling happens on the document */
 body {
-  /* display: flex; REMOVED */
-  /* flex-direction: column; REMOVED */
+  /* Reverted to block layout for native scrolling */
   color: var(--text);
-  min-height: 100%; /* Ensures body can grow with content */
+  min-height: 100%; 
 }
 
 /* Header - always visible and sticky */
@@ -55,6 +54,10 @@ header {
   justify-content: space-between;
   padding: 0 1rem;
   z-index: 1200; /* above sidebar */
+  
+  /* ?? CRITICAL IOS FIX: Force hardware acceleration to keep fixed elements separate from scroll */
+  transform: translateZ(0); 
+  -webkit-transform: translateZ(0);
 }
 
 header .logo {
@@ -96,11 +99,11 @@ nav#sidebar {
   flex-shrink: 0;
   position: fixed;
   top: 0;
-  /* Using 100dvh for fixed sidebar for best mobile compatibility */
+  /* Use dynamic viewport height (dvh) */
   height: 100dvh; 
   font-size: 0.8rem;
   overflow-y: auto;
-  -webkit-overflow-scrolling: touch; /* smooth iOS scroll */
+  -webkit-overflow-scrolling: touch; 
 }
 
 nav#sidebar ul {
@@ -137,15 +140,11 @@ nav#sidebar ul li a.active {
 
 /* Main content */
 main {
-  /* flex: 1 1 auto; REMOVED */
-  /* ?? FIX 2: Remove isolated scrolling from the main content */
-  /* overflow-y: auto; REMOVED */
-  -webkit-overflow-scrolling: touch;
-  
-  /* Retain margins to clear fixed header/sidebar */
+  /* Set margins to clear fixed header/sidebar */
   margin-left: 260px;
   margin-top: 60px; 
   
+  /* Ensure it flows normally (no internal scrolling) */
   padding: 0;
   position: relative;
   z-index: 100;
@@ -165,7 +164,7 @@ main article {
   padding: 23px 2rem;
   border-radius: 0.6rem;
   color: var(--accent);
-  margin: 0; /* left-aligned */
+  margin: 0; 
 }
 
 /* Headings inside article */
@@ -227,7 +226,7 @@ main article li {
   }
 
   nav#sidebar {
-    top: 60px; /* below header */
+    top: 60px; 
     left: 0;
     width: 100%;
     /* Use 100dvh and subtract the fixed header height */
@@ -236,8 +235,8 @@ main article li {
     transition: transform 0.3s ease;
     padding-top: 24px;
     font-size: 0.9rem;
-    background-color: var(--bg); /* visible */
-    z-index: 1100; /* above main content */
+    background-color: var(--bg); 
+    z-index: 1100; 
   }
 
   nav#sidebar.open {
