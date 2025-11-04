@@ -16,20 +16,3 @@ document.querySelectorAll('#sidebar ul li a').forEach(link => {
   link.classList.toggle('active', linkPage === currentPage);
 });
 
-// Track touch scroll
-let isTouchScrolling = false;
-
-sidebar.addEventListener('touchstart', () => {
-  isTouchScrolling = false;
-});
-
-sidebar.addEventListener('touchmove', () => {
-  isTouchScrolling = true;
-});
-
-sidebar.querySelectorAll('a').forEach(link => {
-  link.addEventListener('touchend', (e) => {
-    if (isTouchScrolling) e.preventDefault(); // cancel click if scrolling
-    isTouchScrolling = false;
-  });
-});

@@ -243,22 +243,6 @@ main article li {
     padding: 0.8rem 1rem;
   }
 
-  nav#sidebar ul li a {
-  -webkit-tap-highlight-color: transparent; /* stops dark flash on mobile */
-}
-
-  nav#sidebar ul li a:not(.active) {
-    -webkit-tap-highlight-color: transparent; /* remove default tap highlight */
-    touch-action: manipulation; /* disables accidental hover highlight during scroll */
-  }
-
-  /* Ensure tap/focus on menu items still shows highlight */
-  nav#sidebar ul li a:focus,
-  nav#sidebar ul li a.active {
-    background-color: var(--hover);
-    color: var(--text);
-  }
-
   main article {
     background: transparent;
     padding: 0.5rem;
