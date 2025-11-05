@@ -94,7 +94,8 @@ header .logo i {
 /* ---------- Hamburger Button ---------- */
 #hamburger {
   font-size: 2rem;
-  margin-right: 4px;
+  margin-right: 2px;
+  padding-bottom: 4px;
   background: none;
   border: none;
   color: var(--text);
