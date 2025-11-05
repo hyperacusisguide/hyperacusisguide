@@ -199,6 +199,29 @@ main article li {
   margin-bottom: 0.4rem;
 }
 
+.page-break {
+  width: 100%;
+  margin: 2rem 0;
+  display: block;
+  text-align: center;
+  position: relative;
+  /* visual line */
+  height: 1px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+article img.full-width-image {
+  display: block;
+  width: 100%;
+  height: auto;          /* Keeps the image’s aspect ratio */
+  border-radius: 0rem; /* Optional: matches your rounded style */
+   border: 0px solid rgba(255, 255, 255, 0.15);
+  padding:0px;
+  background-color: var(--menu);
+  margin-top:2rem;
+  margin-bottom:3rem;/* Adds spacing above and below */
+}
+
 /* ---------- Mobile Styles ---------- */
 @media (max-width: 768px) {
   /* Header scrolls on mobile */
