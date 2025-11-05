@@ -222,17 +222,17 @@ main article li {
 
   /* Sidebar overlays content */
 
-  nav#sidebar ul li a {
+nav#sidebar ul li a {
   -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none; /* optional, prevents callout on long tap */
-  -webkit-user-select: none;   /* optional, prevents accidental text selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
 }
 
-@media (hover: none) {
-  nav#sidebar ul li a:active {
-    background-color: var(--hover);
-    color: var(--text);
-  }
+/* Tap feedback class for mobile */
+nav#sidebar ul li a.tap-active {
+  background-color: var(--focus);
+  color: var(--text);
+  transition: background-color 0.15s; /* smooth brief feedback */
 }
 
   nav#sidebar {
