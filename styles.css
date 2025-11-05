@@ -60,7 +60,7 @@ body {
 header {
   position: fixed;
   top: 0;
-  left: 260px;
+  left: 240px;
   right: 0;
   height: 60px;
   background-color: var(--header);
@@ -104,7 +104,7 @@ header .logo i {
 
 /* ---------- Sidebar (Desktop) ---------- */
 nav#sidebar {
-  width: 260px;
+  width: 240px;
   background-color: var(--menu);
   padding: 80px 20px 0 20px;
   position: fixed;
@@ -132,6 +132,7 @@ nav#sidebar ul li a {
   border-radius: 0.3rem;
 }
 
+
 nav#sidebar ul li a.active {
   background-color: var(--focus);
   color: var(--text);
@@ -144,10 +145,17 @@ nav#sidebar ul li a.active {
   }
 }
 
+@media (hover: none) {
+  nav#sidebar ul li a:active {
+    background-color: var(--hover);
+    color: var(--text);
+  }
+}
+
 /* ---------- Main Content (Desktop) ---------- */
 main {
   flex: 1 1 auto;
-  margin-left: 260px;
+  margin-left: 240px;
   margin-top: 60px; /* header height */
   overflow-y: visible;
   -webkit-overflow-scrolling: touch;
