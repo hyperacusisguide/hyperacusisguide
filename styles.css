@@ -145,13 +145,6 @@ nav#sidebar ul li a.active {
   }
 }
 
-@media (hover: none) {
-  nav#sidebar ul li a:active {
-    background-color: var(--hover);
-    color: var(--text);
-  }
-}
-
 /* ---------- Main Content (Desktop) ---------- */
 main {
   flex: 1 1 auto;
@@ -228,6 +221,20 @@ main article li {
   }
 
   /* Sidebar overlays content */
+
+  nav#sidebar ul li a {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none; /* optional, prevents callout on long tap */
+  -webkit-user-select: none;   /* optional, prevents accidental text selection */
+}
+
+@media (hover: none) {
+  nav#sidebar ul li a:active {
+    background-color: var(--hover);
+    color: var(--text);
+  }
+}
+
   nav#sidebar {
     top: 0;
     height: 100vh;
