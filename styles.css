@@ -213,7 +213,7 @@ main article li {
 
 article img.full-width-image {
   display: block;
-  width: 100%;
+  width: 80%;
   height: auto;          /* Keeps the image’s aspect ratio */
   border-radius: 0.6rem; /* Optional: matches your rounded style */
    border: 0px solid rgba(255, 255, 255, 0.15);
@@ -221,6 +221,7 @@ article img.full-width-image {
   background-color: var(--menu);
   margin-top:1.5rem;
   margin-bottom:2rem;/* Adds spacing above and below */
+  margin-left: 2rem;
 }
 
 /* ---------- Mobile Styles ---------- */
