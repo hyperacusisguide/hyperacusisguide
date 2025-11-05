@@ -218,7 +218,14 @@ main article li {
 
   header .logo {
     padding-left: 7px;
+    font-size: 1.1rem;
+    font-weight: 700;
   }
+
+
+header .logo i {
+  font-size: 1.3rem;
+}
 
   /* Sidebar overlays content */
 
