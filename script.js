@@ -1,6 +1,7 @@
 // ---------- DOM Elements ----------
 const hamburger = document.getElementById('hamburger');
 const sidebar = document.getElementById('sidebar');
+const scrollableElements = document.querySelectorAll('main, main article');
 
 // Variable to store the scroll position when the menu is open
 let scrollPosition = 0; 
@@ -22,20 +23,34 @@ hamburger.addEventListener('click', () => {
         document.body.style.removeProperty('top');
         document.body.style.removeProperty('position');
 
+        // Restore scrollable children
+        scrollableElements.forEach(el => {
+            el.style.overflow = '';
+            el.style.webkitOverflowScrolling = '';
+        });
+
     } else {
+        // --- OPENING THE MENU ---
+        // 1. Record current scroll position
+        scrollPosition = window.scrollY;
 
-
-        // Restore scroll position
-        window.scrollTo(0, scrollPosition);
-
-        // Apply class first so CSS hides scrollbar immediately
+        // 2. Apply menu-open class first to trigger CSS
         sidebar.classList.add('open');
         document.body.classList.add('menu-open');
         document.documentElement.classList.add('menu-open');
 
-        // Then apply scroll lock
+        // 3. Lock body scroll
         document.body.style.top = `-${scrollPosition}px`;
         document.body.style.position = 'fixed';
+
+        // 4. Hide scrollbars on scrollable children
+        scrollableElements.forEach(el => {
+            el.style.overflow = 'hidden';
+            el.style.webkitOverflowScrolling = 'auto'; // disables momentum scrolling
+        });
+
+        // 5. Force a reflow to ensure scrollbars disappear instantly on iOS
+        document.body.offsetHeight;
     }
 });
 
