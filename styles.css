@@ -135,15 +135,21 @@ nav#sidebar ul li a {
 
 
 nav#sidebar ul li a.active {
-  background-color: var(--focus);
-  color: var(--text);
+  background-color: var(--focus) !important;
+  color: var(--text) !important;
 }
 
+/* Hover effect for links that are NOT active */
 @media (hover: hover) and (pointer: fine) {
-  nav#sidebar ul li a:hover {
+  nav#sidebar ul li a:hover:not(.active) {
     background-color: var(--hover);
     color: var(--text);
   }
+}
+
+/* Remove :active styling to prevent "stuck" highlight on drag */
+nav#sidebar ul li a:focus:not(.active) {
+  outline: none;
 }
 
 /* ---------- Main Content (Desktop) ---------- */
