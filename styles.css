@@ -139,6 +139,13 @@ nav#sidebar ul li a.active {
   color: var(--text) !important;
 }
 
+nav#sidebar,
+nav#sidebar ul li a {
+  transform: translateZ(0); /* Promote to its own layer */
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
 /* Hover effect for links that are NOT active */
 @media (hover: hover) and (pointer: fine) {
   nav#sidebar ul li a:hover:not(.active) {
