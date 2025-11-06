@@ -139,11 +139,23 @@ nav#sidebar ul li a.active {
   color: var(--text);
 }
 
+nav#sidebar ul li a.focus {
+  background-color: var(--hover);
+  color: var(--text);
+}
+
 @media (hover: hover) and (pointer: fine) {
   nav#sidebar ul li a:hover {
     background-color: var(--hover);
     color: var(--text);
   }
+}
+
+nav#sidebar ul li a:focus,
+nav#sidebar ul li a:active {
+  background-color: var(--hover);
+  color: var(--text);
+  outline: none; /* remove default focus ring if you don’t want it */
 }
 
 /* ---------- Main Content (Desktop) ---------- */
