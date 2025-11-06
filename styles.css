@@ -133,30 +133,29 @@ nav#sidebar ul li a {
   border-radius: 0.3rem;
 }
 
-
 nav#sidebar ul li a.active {
-  background-color: var(--focus) !important;
-  color: var(--text) !important;
+  background-color: var(--focus);
+  color: var(--text);
 }
 
-nav#sidebar,
-nav#sidebar ul li a {
-  transform: translateZ(0); /* Promote to its own layer */
-  will-change: transform;
-  backface-visibility: hidden;
-}
-
-/* Hover effect for links that are NOT active */
 @media (hover: hover) and (pointer: fine) {
-  nav#sidebar ul li a:hover:not(.active) {
+  nav#sidebar ul li a:hover {
     background-color: var(--hover);
     color: var(--text);
   }
 }
 
-/* Remove :active styling to prevent "stuck" highlight on drag */
-nav#sidebar ul li a:focus:not(.active) {
-  outline: none;
+nav#sidebar ul li a {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+}
+
+/* Tap feedback class for mobile */
+nav#sidebar ul li a.tap-active {
+  background-color: var(--focus);
+  color: var(--text);
+  transition: background-color 0s; /* smooth brief feedback */
 }
 
 /* ---------- Main Content (Desktop) ---------- */
@@ -295,18 +294,7 @@ header .logo i {
 
   /* Sidebar overlays content */
 
-nav#sidebar ul li a {
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-}
 
-/* Tap feedback class for mobile */
-nav#sidebar ul li a.tap-active {
-  background-color: var(--focus);
-  color: var(--text);
-  transition: background-color 0s; /* smooth brief feedback */
-}
 
   nav#sidebar {
     top: 0;
