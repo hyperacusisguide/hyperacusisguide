@@ -5,9 +5,8 @@ const sidebar = document.getElementById('sidebar');
 // Variable to store the scroll position when the menu is open
 let scrollPosition = 0; 
 
-// ---------- Hamburger Menu Toggle (FINAL REVISION for iOS Scroll Lock) ----------
+// ---------- Hamburger Menu Toggle (iOS Scroll Lock + Scrollbar Hide) ----------
 hamburger.addEventListener('click', () => {
-    // Check if the menu is currently open by checking the sidebar class
     const isMenuOpen = sidebar.classList.contains('open');
 
     if (isMenuOpen) {
@@ -18,25 +17,23 @@ hamburger.addEventListener('click', () => {
 
         // Restore scroll position
         window.scrollTo(0, scrollPosition);
-        
+
         // Remove inline styles used for scroll locking
         document.body.style.removeProperty('top');
         document.body.style.removeProperty('position');
 
     } else {
         // --- OPENING THE MENU ---
-        // 1. Record current scroll position
         scrollPosition = window.scrollY;
-        
-        // 2. Set scroll lock styles via JS. This is the core fix for iOS visual scrollbar.
-        // It shifts the body up by the negative scroll amount and fixes it.
-        document.body.style.top = `-${scrollPosition}px`;
-        document.body.style.position = 'fixed';
-        
-        // 3. Apply classes for overflow:hidden and menu visibility
+
+        // Apply class first so CSS hides scrollbar immediately
         sidebar.classList.add('open');
         document.body.classList.add('menu-open');
         document.documentElement.classList.add('menu-open');
+
+        // Then apply scroll lock
+        document.body.style.top = `-${scrollPosition}px`;
+        document.body.style.position = 'fixed';
     }
 });
 
@@ -55,13 +52,11 @@ document.querySelectorAll('nav#sidebar ul li a').forEach(link => {
     });
 
     link.addEventListener('touchend', () => {
-        // remove highlight shortly after lifting finger
         setTimeout(() => {
             link.classList.remove('tap-active');
-        }, 150); // 150ms is enough to show brief feedback
+        }, 150);
     });
 
-    // optional: remove highlight if user scrolls instead of tapping
     link.addEventListener('touchmove', () => {
         link.classList.remove('tap-active');
     });

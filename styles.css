@@ -7,8 +7,8 @@
     --accent: #b0b0b0;
     --article: #2A2A2B;
     --focus: #38373A;
-    --logo: #7dc895; /* Accent color for logo/branding */
-    --ear: #007acc; /* Secondary accent */
+    --logo: #7dc895;
+    --ear: #007acc;
     --header: #252526;
     --menu: #2A2A2B;
     color-scheme: dark;
@@ -29,7 +29,7 @@ html, body {
     margin: 0;
     padding: 0;
     background-color: var(--bg);
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: hidden;
 }
 
 body {
@@ -38,7 +38,7 @@ body {
     color: var(--text);
 }
 
-/* Link Styles */
+/* ---------- Link Styles ---------- */
 .link {
     color: #74b9ff;
     text-decoration: none;
@@ -61,7 +61,7 @@ body {
 header {
     position: fixed;
     top: 0;
-    left: 260px; /* Aligned with sidebar width */
+    left: 260px;
     right: 0;
     z-index: 1200;
     height: 60px;
@@ -94,7 +94,7 @@ header .logo i {
 
 /* ---------- Hamburger Button (Mobile Only) ---------- */
 #hamburger {
-    display: none; /* Hidden on desktop */
+    display: none;
     font-size: 2rem;
     margin-right: 2px;
     padding-bottom: 4px;
@@ -134,7 +134,6 @@ nav#sidebar ul li a {
     border-radius: 0.3rem;
 }
 
-
 nav#sidebar ul li a.active {
     background-color: var(--focus);
     color: var(--text);
@@ -148,15 +147,10 @@ nav#sidebar ul li a.active {
 }
 
 /* ---------- Main Content (Desktop) ---------- */
-.quote{
-    font-size:0.9rem;
-    font-weight:400;
-}
-
 main {
     flex: 1 1 auto;
-    margin-left: 260px; /* Offset for fixed sidebar */
-    margin-top: 60px; /* Offset for fixed header */
+    margin-left: 260px;
+    margin-top: 60px;
     margin-bottom: 2rem;
     padding: 0;
     position: relative;
@@ -237,7 +231,6 @@ article img.full-width-image {
     height: auto;
     margin: 0rem 0 0.5rem 0rem;
     padding: 0;
-    border: 0px solid rgba(255, 255, 255, 0.15);
     border-radius: 0.6rem;
     background-color: var(--menu);
 }
@@ -248,14 +241,12 @@ article img.full-width-image:last-child {
 
 /* ---------- Mobile Styles (Max-width 768px) ---------- */
 @media (max-width: 768px) {
-    /* Header scrolls on mobile */
     header {
         position: static;
         height: 70px;
-        left: 0; /* Reset desktop fixed position */
+        left: 0;
     }
 
-    /* Show hamburger button */
     #hamburger {
         display: block;
     }
@@ -270,7 +261,6 @@ article img.full-width-image:last-child {
         font-size: 1.3rem;
     }
 
-    /* Main content resets */
     main {
         margin: 0;
         margin-bottom: 4rem;
@@ -278,32 +268,28 @@ article img.full-width-image:last-child {
         padding: 1rem;
     }
 
-    /* ?? SIDEBAR ADJUSTMENT: Position absolute so it scrolls independently of the fixed body */
     nav#sidebar {
-        position: absolute; 
+        position: absolute;
         top: 0;
         left: 0;
         right: 0;
         width: 100%;
         height: 100vh;
         padding-top: 94px;
-        padding-bottom: 0px;
-        transform: translateY(-100%); /* Start off-screen */
+        transform: translateY(-100%);
         transition: transform 0.3s ease;
         background-color: var(--bg);
         font-size: 0.9rem;
         z-index: 1100;
-        overflow-y: auto; /* CRITICAL: Allows the menu content to scroll */
+        overflow-y: auto;
         -webkit-overflow-scrolling: touch;
         touch-action: pan-y;
     }
 
-    /* Sidebar open state */
     nav#sidebar.open {
         transform: translateY(0);
     }
 
-    /* Mobile link tap feedback */
     nav#sidebar ul li a {
         padding: 0.8rem 1rem;
         -webkit-tap-highlight-color: transparent;
@@ -317,7 +303,6 @@ article img.full-width-image:last-child {
         transition: background-color 0s;
     }
 
-    /* Main content article adjustments */
     main article {
         max-width: 100%;
         padding: 0.5rem;
@@ -327,36 +312,17 @@ article img.full-width-image:last-child {
         font-size: 0.9rem;
     }
 
-    main article h2 {
-        font-size: 0.9rem;
-    }
-
     article img.full-width-image {
         width: 100%;
     }
 
-    /* ?? FINAL iOS SCROLL LOCK METHOD (CSS PART) */
-    body.menu-open,
-    html.menu-open {
-        /* Prevents all scrolling on the viewport */
-        overflow-y: hidden; 
-        height: 100vh;
-        overscroll-behavior: none; 
-    }
-    
-    /* Body receives position: fixed and top: -Xpx via JavaScript */
-    body.menu-open {
-        width: 100%;
-    }
-
-    /* Ensures the main content cannot scroll or show its own scrollbar */
-    body.menu-open main {
-        overflow: hidden; 
-        height: 100%;
-    }
-
-    body.menu-open header {
-        height: 70px !important;
-        flex-shrink: 0 !important;
+    /* ---------- FULL SCROLLBAR HIDE ON MENU OPEN (iOS safe) ---------- */
+    body.menu-open main::-webkit-scrollbar,
+    body.menu-open article::-webkit-scrollbar,
+    html.menu-open main::-webkit-scrollbar,
+    html.menu-open article::-webkit-scrollbar {
+        display: none;
+        width: 0;
+        height: 0;
     }
 }
