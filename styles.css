@@ -342,4 +342,8 @@ article img.full-width-image:last-child {
     height: 70px !important;
     flex-shrink: 0 !important;
   }
+
+  body.menu-open main {
+    display: none; /* Hide main content completely when menu is open */
+  }
 }
