@@ -26,6 +26,9 @@ hamburger.addEventListener('click', () => {
         // --- OPENING THE MENU ---
         scrollPosition = window.scrollY;
 
+        // Restore scroll position
+        window.scrollTo(0, scrollPosition);
+
         // Apply class first so CSS hides scrollbar immediately
         sidebar.classList.add('open');
         document.body.classList.add('menu-open');
