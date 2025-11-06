@@ -334,6 +334,7 @@ nav#sidebar ul li a.tap-active {
 
   article img.full-width-image {
   width: 100%;
+  }
 
   /* Prevent body scroll when menu is open */
   body.menu-open {
