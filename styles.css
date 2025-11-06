@@ -131,6 +131,9 @@ nav#sidebar ul li a {
   padding: 0.6rem 1rem;
   display: block;
   border-radius: 0.3rem;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
 }
 
 nav#sidebar ul li a.active {
@@ -145,30 +148,24 @@ nav#sidebar ul li a.active {
   }
 }
 
-nav#sidebar ul li a {
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-}
-
 /* Tap feedback class for mobile */
 nav#sidebar ul li a.tap-active {
   background-color: var(--focus);
   color: var(--text);
-  transition: background-color 0s; /* smooth brief feedback */
+  transition: background-color 0s;
 }
 
 /* ---------- Main Content (Desktop) ---------- */
-.quote{
-    font-size:0.9rem;
-    font-weight:400;
+.quote {
+  font-size: 0.9rem;
+  font-weight: 400;
 }
 
 main {
   flex: 1 1 auto;
   margin-left: 260px;
   margin-bottom: 2rem;
-  margin-top: 60px; /* header height */
+  margin-top: 60px;
   overflow-y: visible;
   -webkit-overflow-scrolling: touch;
   padding: 0;
@@ -238,7 +235,6 @@ main article li {
   display: block;
   text-align: center;
   position: relative;
-  /* visual line */
   height: 1px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
@@ -246,23 +242,22 @@ main article li {
 article img.full-width-image {
   display: block;
   width: 90%;
-  height: auto;          /* Keeps the image’s aspect ratio */
-  border-radius: 0.6rem; /* Optional: matches your rounded style */
-   border: 0px solid rgba(255, 255, 255, 0.15);
-  padding:0px;
+  height: auto;
+  border-radius: 0.6rem;
+  border: 0px solid rgba(255, 255, 255, 0.15);
+  padding: 0px;
   background-color: var(--menu);
-  margin-top:0rem;
-  margin-bottom:0.5rem;/* Adds spacing above and below */
+  margin-top: 0rem;
+  margin-bottom: 0.5rem;
   margin-left: 0rem;
 }
 
 article img.full-width-image:last-child {
-  margin-bottom:2rem;/* Adds spacing above and below */
+  margin-bottom: 2rem;
 }
 
 /* ---------- Mobile Styles ---------- */
 @media (max-width: 768px) {
-  /* Header scrolls on mobile */
   header {
     position: static;
     height: 70px;
@@ -287,15 +282,11 @@ article img.full-width-image:last-child {
     font-weight: 700;
   }
 
-
-header .logo i {
-  font-size: 1.3rem;
-}
+  header .logo i {
+    font-size: 1.3rem;
+  }
 
   /* Sidebar overlays content */
-
-
-
   nav#sidebar {
     top: 0;
     height: 100vh;
@@ -307,9 +298,9 @@ header .logo i {
     font-size: 0.9rem;
     background-color: var(--bg);
     z-index: 1100;
-    overflow-y: auto;               /* Sidebar scrollable */
+    overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    touch-action: pan-y;            /* Only vertical scroll */
+    touch-action: pan-y;
   }
 
   nav#sidebar.open {
@@ -334,16 +325,17 @@ header .logo i {
   }
 
   article img.full-width-image {
-  width: 100%;
+    width: 100%;
   }
 
-  /* Prevent body scroll when menu is open */
+  /* Prevent body scroll when menu is open (scrollbar hidden immediately) */
   body.menu-open {
     position: fixed;
     width: 100%;
     height: 100vh;
-    overflow-y: hidden;            /* Lock body scroll */
-    overscroll-behavior: contain;  /* Prevent scroll chain to body */
+    overflow: hidden !important; /* hides scrollbar immediately */
+    overscroll-behavior: contain;
+    touch-action: none; /* blocks touch scroll behind menu */
   }
 
   body.menu-open header {
