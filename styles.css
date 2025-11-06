@@ -139,11 +139,6 @@ nav#sidebar ul li a.active {
   color: var(--text);
 }
 
-nav#sidebar ul li a.focus {
-  background-color: var(--hover);
-  color: var(--text);
-}
-
 @media (hover: hover) and (pointer: fine) {
   nav#sidebar ul li a:hover {
     background-color: var(--hover);
@@ -153,8 +148,8 @@ nav#sidebar ul li a.focus {
 
 /* ---------- Main Content (Desktop) ---------- */
 .quote{
-    font-size:1rem;
-    font-weight:300;
+    font-size:0.9rem;
+    font-weight:400;
 }
 
 main {
