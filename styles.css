@@ -158,6 +158,7 @@ nav#sidebar ul li a:active {
   outline: none; /* remove default focus ring if you don’t want it */
 }
 
+
 /* ---------- Main Content (Desktop) ---------- */
 .quote{
     font-size:1rem;
