@@ -4,8 +4,15 @@ const sidebar = document.getElementById('sidebar');
 
 // ---------- Hamburger Menu Toggle ----------
 hamburger.addEventListener('click', () => {
-  sidebar.classList.toggle('open');
-  document.body.classList.toggle('menu-open'); // Locks background scroll on mobile
+  const isOpen = sidebar.classList.toggle('open');
+  document.body.classList.toggle('menu-open', isOpen);
+
+  // Instantly hide scrollbar when menu opens (mobile only)
+  if (isOpen && window.innerWidth <= 768) {
+    document.documentElement.style.overflow = 'hidden';
+  } else {
+    document.documentElement.style.overflow = '';
+  }
 });
 
 // ---------- Highlight Current Page in Sidebar ----------
@@ -16,20 +23,18 @@ document.querySelectorAll('#sidebar ul li a').forEach(link => {
   link.classList.toggle('active', linkPage === currentPage);
 });
 
-// Add tap feedback on touch devices
+// ---------- Tap Feedback on Touch Devices ----------
 document.querySelectorAll('nav#sidebar ul li a').forEach(link => {
   link.addEventListener('touchstart', () => {
-    link.classList.add('tap-active'); // highlight immediately on tap
+    link.classList.add('tap-active');
   });
 
   link.addEventListener('touchend', () => {
-    // remove highlight shortly after lifting finger
     setTimeout(() => {
       link.classList.remove('tap-active');
-    }, 150); // 150ms is enough to show brief feedback
+    }, 150);
   });
 
-  // optional: remove highlight if user scrolls instead of tapping
   link.addEventListener('touchmove', () => {
     link.classList.remove('tap-active');
   });
