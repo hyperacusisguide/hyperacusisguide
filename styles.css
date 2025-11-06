@@ -43,19 +43,9 @@ body {
     color: #74b9ff;
     text-decoration: none;
 }
-
-.link:visited {
-    color: #74b9ff;
-}
-
-.link:hover {
-    color: #74b9ff;
-    text-decoration: underline;
-}
-
-.link:active {
-    color: #74b9ff;
-}
+.link:visited { color: #74b9ff; }
+.link:hover { color: #74b9ff; text-decoration: underline; }
+.link:active { color: #74b9ff; }
 
 /* ---------- Header (Desktop) ---------- */
 header {
@@ -122,9 +112,7 @@ nav#sidebar ul {
     list-style: none;
 }
 
-nav#sidebar ul li {
-    margin: 0;
-}
+nav#sidebar ul li { margin: 0; }
 
 nav#sidebar ul li a {
     display: block;
@@ -172,30 +160,11 @@ main article {
     color: var(--accent);
 }
 
-main article h1 {
-    font-size: 1.1rem;
-    font-weight: 500;
-    margin: 0 0 0.6rem 0;
-    color: var(--text);
-}
+main article h1 { font-size: 1.1rem; font-weight: 500; margin: 0 0 0.6rem 0; color: var(--text); }
+main article h2 { font-size: 0.9rem; font-weight: 700; margin: 0.7rem 0 0.6rem 0; color: var(--text); }
+main article h3 { font-size: 0.9rem; font-weight: 700; margin: 1rem 0 0.6rem 0; color: var(--text); }
 
-main article h2 {
-    font-size: 0.9rem;
-    font-weight: 700;
-    margin: 0.7rem 0 0.6rem 0;
-    color: var(--text);
-}
-
-main article h3 {
-    font-size: 0.9rem;
-    font-weight: 700;
-    margin: 1rem 0 0.6rem 0;
-    color: var(--text);
-}
-
-main article p {
-    margin-bottom: 1rem;
-}
+main article p { margin-bottom: 1rem; }
 
 main article ul {
     margin: 0.5rem 0 1.2rem 1.4rem;
@@ -211,9 +180,7 @@ main article ul ul {
     list-style-type: disc;
 }
 
-main article li {
-    margin-bottom: 0.4rem;
-}
+main article li { margin-bottom: 0.4rem; }
 
 .page-break {
     display: block;
@@ -229,50 +196,32 @@ article img.full-width-image {
     display: block;
     width: 90%;
     height: auto;
-    margin: 0rem 0 0.5rem 0rem;
+    margin: 0 0 0.5rem 0;
     padding: 0;
     border-radius: 0.6rem;
     background-color: var(--menu);
 }
-file:///C:/Users/Brad/Desktop/New%20folder/medications.html
+
 article img.full-width-image:last-child {
     margin-bottom: 2rem;
 }
 
 /* ---------- Mobile Styles (Max-width 768px) ---------- */
 @media (max-width: 768px) {
-    header {
-        position: static;
-        height: 70px;
-        left: 0;
-    }
+    header { position: static; height: 70px; left: 0; }
+    #hamburger { display: block; }
+    header .logo { padding-left: 7px; font-size: 1.1rem; font-weight: 700; }
+    header .logo i { font-size: 1.3rem; }
 
-    #hamburger {
-        display: block;
-    }
+    main { margin: 0; margin-bottom: 4rem; height: auto; padding: 1rem; }
 
-    header .logo {
-        padding-left: 7px;
-        font-size: 1.1rem;
-        font-weight: 700;
-    }
-
-    header .logo i {
-        font-size: 1.3rem;
-    }
-
-    main {
-        margin: 0;
-        margin-bottom: 4rem;
-        height: auto;
-        padding: 1rem;
-    }
-
+    /* Sidebar as full-screen scrollable menu */
     nav#sidebar {
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         right: 0;
+        bottom: 0;
         width: 100%;
         height: 100vh;
         padding-top: 94px;
@@ -286,9 +235,7 @@ article img.full-width-image:last-child {
         touch-action: pan-y;
     }
 
-    nav#sidebar.open {
-        transform: translateY(0);
-    }
+    nav#sidebar.open { transform: translateY(0); }
 
     nav#sidebar ul li a {
         padding: 0.8rem 1rem;
@@ -312,17 +259,16 @@ article img.full-width-image:last-child {
         font-size: 0.9rem;
     }
 
-    article img.full-width-image {
-        width: 100%;
-    }
+    article img.full-width-image { width: 100%; }
 
-    /* ---------- FULL SCROLLBAR HIDE ON MENU OPEN (iOS safe) ---------- */
-    body.menu-open main::-webkit-scrollbar,
-    body.menu-open article::-webkit-scrollbar,
-    html.menu-open main::-webkit-scrollbar,
-    html.menu-open article::-webkit-scrollbar {
-        display: none;
-        width: 0;
-        height: 0;
+    /* Lock body scroll when menu open */
+    body.menu-open,
+    html.menu-open {
+        overflow: hidden;
+        position: fixed;
+        top: -var(--scrollY, 0);
+        left: 0;
+        right: 0;
+        height: 100vh;
     }
 }
