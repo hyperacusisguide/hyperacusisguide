@@ -223,7 +223,7 @@ article img.full-width-image:last-child {
 @media (max-width: 768px) {
     header { position: static; height: 70px; left: 0; }
     #hamburger { display: block; }
-    header .logo { padding-left: 7px; font-size: 1.2rem; font-weight: 600; }
+    header .logo { padding-left: 7px; font-size: 1.1rem; font-weight: 600; }
     header .logo i { font-size: 1.3rem; }
 
  .logo-image{
