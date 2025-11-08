@@ -219,6 +219,13 @@ article img.full-width-image:last-child {
     font-size: 0.9rem;
 }
 
+video {
+  width: 100%;
+  height: auto;
+  border-radius: 0.6rem;
+  margin: 0;
+}
+
 /* ---------- Mobile Styles (Max-width 768px) ---------- */
 @media (max-width: 768px) {
     header { position: static; height: 70px; left: 0; }
@@ -288,6 +295,10 @@ article img.full-width-image:last-child {
     .quote {
     font-weight: 400;
     font-size: 0.95rem;
+    }
+
+    .link{
+    font-weight: 500;
     }
 
     article img.full-width-image { width: 100%; }
