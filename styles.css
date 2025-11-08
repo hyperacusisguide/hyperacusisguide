@@ -277,11 +277,12 @@ article img.full-width-image:last-child {
         margin-bottom: 0;
         background: transparent;
         border-radius: 0.6rem;
-        font-size: 1rem;
+        font-size: 0.95rem;
+        font-weight: 400;
     }
 
     main article h1 { font-size: 1.1rem; font-weight: 500; margin: 0 0 0.6rem 0; color: var(--text); }
-    main article h2 { font-size: 1.1rem; font-weight: 700; margin: 0.7rem 0 0.6rem 0; color: var(--text); }
+    main article h2 { font-size: 1rem; font-weight: 600; margin: 0.7rem 0 0.6rem 0; color: var(--text); }
     main article h3 { font-size: 0.9rem; font-weight: 700; margin: 1rem 0 0.6rem 0; color: var(--text); }
 
     article img.full-width-image { width: 100%; }
