@@ -1,16 +1,16 @@
 /* ---------- Root Variables ---------- */
 :root {
-    --bg: #202225;
+    --bg: #252526;
     --panel: #2d2d30;
-    --text: rgba(255, 255, 255, 0.8);
-    --hover: #42464e;
+    --text: #e0e0e0;
+    --hover: #424146;
     --accent: #b0b0b0;
-    --article: #9da1a4;
-    --focus: #37393f;
+    --article: #2A2A2B;
+    --focus: #38373A;
     --logo: #7dc895;
     --ear: #007acc;
-    --header: #1e2124;
-    --menu: #292b2f;
+    --header: #252526;
+    --menu: #2A2A2B;
     color-scheme: dark;
 }
 
@@ -87,7 +87,6 @@ header .logo i {
   height: 40px;
   margin-left: -13px;
   margin-right: -17px;
-  opacity: 90%;
 }
 
 /* ---------- Hamburger Button (Mobile Only) ---------- */
@@ -102,7 +101,6 @@ header .logo i {
     border: none;
     color: var(--text);
     cursor: pointer;
-    opacity: 90%;
 }
 
 /* ---------- Sidebar (Desktop) ---------- */
