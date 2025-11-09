@@ -87,7 +87,7 @@ header .logo i {
   height: 40px;
   margin-left: -13px;
   margin-right: -17px;
-  opacity: 95%;
+  opacity: 90%;
 }
 
 /* ---------- Hamburger Button (Mobile Only) ---------- */
@@ -102,7 +102,7 @@ header .logo i {
     border: none;
     color: var(--text);
     cursor: pointer;
-    opacity: 95%;
+    opacity: 90%;
 }
 
 /* ---------- Sidebar (Desktop) ---------- */
