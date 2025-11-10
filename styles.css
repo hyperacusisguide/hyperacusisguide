@@ -129,6 +129,13 @@ nav#sidebar ul li a {
     text-decoration: none;
     color: var(--accent);
     border-radius: 0.3rem;
+    -webkit-tap-highlight-color: transparent;
+}
+
+nav#sidebar ul li a.tap-active {
+  background-color: var(--focus);
+  color: var(--text);
+  transition: background-color 0.3s;
 }
 
 nav#sidebar ul li a.active {
@@ -347,7 +354,7 @@ video {
     nav#sidebar ul li a.tap-active {
         background-color: var(--focus);
         color: var(--text);
-        transition: background-color 0.2s;
+        transition: background-color 0.3s;
     }
 
     main article {
@@ -403,4 +410,14 @@ padding:20px 20px 14px 20px;
     nav#sidebar::-webkit-scrollbar {
         display: none; /* Chrome, Safari, iOS */
     }
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+article {
+  opacity: 0;
+  animation: fadeIn 0.6s ease forwards;
+  animation-delay: 0.1s;
 }
