@@ -327,7 +327,50 @@ video {
   margin-right: -19px;
   }
 
+  /* Hamburger button lines */
+#hamburger {
+  position: relative;
+  width: 30px;
+  height: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 0px;
+  margin-right: 8px;
+  z-index: 1300;
+}
 
+/* Stack lines exactly in the center */
+#hamburger span {
+  display: block;
+  position: absolute;  /* position relative to button */
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--text);
+  border-radius: 2px;
+  transition: all 0.4s ease;
+}
+
+/* Position each line */
+#hamburger span:nth-child(1) { top: 2px; }
+#hamburger span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+#hamburger span:nth-child(3) { bottom: 2px; }
+
+/* Animate to X with a little left shift */
+#hamburger.active span:nth-child(1) {
+  top: 50%;
+  transform: translate(6px, -50%) rotate(45deg); /* shift left by 2px */
+}
+
+#hamburger.active span:nth-child(2) {
+  opacity: 0; /* middle line fades out */
+}
+
+#hamburger.active span:nth-child(3) {
+  top: 50%;
+  transform: translate(6px, -50%) rotate(-45deg); /* same left shift */
+}
     main { margin: 0; margin-bottom: 4rem; height: auto; padding: 1rem; }
 
     /* Sidebar as full-screen scrollable menu */
