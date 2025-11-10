@@ -49,18 +49,19 @@ document.querySelectorAll('#sidebar ul li a').forEach(link => {
 
 // ---------- Add Tap Feedback on Touch Devices ----------
 document.querySelectorAll('nav#sidebar ul li a').forEach(link => {
-    link.addEventListener('pointerdown', () => {
-        link.classList.add('tap-active');
+    link.addEventListener('touchstart', () => {
+        link.classList.add('tap-active'); // highlight immediately on tap
     });
 
-    link.addEventListener('pointerup', () => {
+    link.addEventListener('touchend', () => {
         setTimeout(() => {
             link.classList.remove('tap-active');
         }, 150);
     });
 
-    link.addEventListener('pointerleave', () => {
+    link.addEventListener('touchmove', () => {
         link.classList.remove('tap-active');
     });
 });
+
 

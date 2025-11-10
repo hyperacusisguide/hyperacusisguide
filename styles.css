@@ -132,10 +132,18 @@ nav#sidebar ul li a {
     -webkit-tap-highlight-color: transparent;
 }
 
+@media (hover: none) and (pointer: coarse) {
+    nav#sidebar ul li a:focus {
+        outline: none;
+        background-color: var(--focus); /* match your tap color */
+        color: var(--text);
+    }
+}
+
 nav#sidebar ul li a.tap-active {
   background-color: var(--focus);
   color: var(--text);
-  transition: background-color 0.3s;
+  transition: background-color 0.2s;
 }
 
 nav#sidebar ul li a.active {
