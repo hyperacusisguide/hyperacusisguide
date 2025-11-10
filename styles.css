@@ -362,7 +362,7 @@ video {
     nav#sidebar ul li a.tap-active {
         background-color: var(--focus);
         color: var(--text);
-        transition: background-color 0.3s;
+        transition: background-color 0.2s;
     }
 
     main article {
