@@ -115,7 +115,7 @@ document.addEventListener('keydown', (e) => {
 // ---------- Animate Sidebar Links (staggered fade) ----------
 function animateSidebarLinks(open) {
     sidebarLinks.forEach((link, index) => {
-        link.style.transition = `opacity 0.2s ease ${index * 0.05}s, transform 0.2s ease ${index * 0.05}s, background-color 0.3s ease`;
+        link.style.transition = `opacity 0.25s ease ${index * 0.05}s, transform 0.25s ease ${index * 0.05}s, background-color 0.3s ease`;
         if (open) {
             link.style.opacity = '1';
             link.style.transform = 'translateY(0)';
