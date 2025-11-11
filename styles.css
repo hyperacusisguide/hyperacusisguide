@@ -291,7 +291,7 @@ article img.full-width-image {
     display: block;
     width: 90%;
     height: auto;
-    margin: 1.5rem 0 0 0;
+    margin: 1rem 0 0 0;
     padding: 0;
     border-radius: 0.6rem;
     background-color: var(--menu);
@@ -299,6 +299,10 @@ article img.full-width-image {
 
 article img.full-width-image:last-child {
     margin-bottom: 2rem;
+}
+
+article img.full-width-image:first-child {
+    margin-top: 1.5rem;
 }
 
 .quote {
@@ -441,6 +445,61 @@ video {
 padding:20px 20px 14px 20px;
 }
 
+html {
+  scroll-behavior: smooth; /* smooth scrolling */
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 45px;
+  height: 45px;
+  border: 0px solid var(--accent, #b0b0b0);
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease, opacity 0.3s ease;
+  z-index: 999;
+  text-decoration: none;
+  font-size: 0;
+  color: transparent;
+  opacity: 0;           /* hidden by default */
+  pointer-events: none; /* not clickable when hidden */
+}
+
+/* CSS up arrow */
+.back-to-top::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  margin-top: 5px;
+  border-left: 3px solid var(--text, #e0e0e0);
+  border-bottom: 3px solid var(--text, #e0e0e0);
+  transform: rotate(135deg);
+  transition: border-color 0.3s ease;
+}
+
+/* Hover styling */
+.back-to-top:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: #e0e0e0;
+}
+
+.back-to-top:hover::before {
+  border-color: #e0e0e0;
+}
+
+/* Visible state */
+.back-to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
     article img.full-width-image { width: 100%; }
 
     /* ---------- HIDE SCROLLBARS ON MOBILE ---------- */
@@ -451,6 +510,9 @@ padding:20px 20px 14px 20px;
     nav#sidebar {
         scrollbar-width: none; /* Firefox */
         -ms-overflow-style: none; /* IE 10+ */
+    
+  scroll-behavior: smooth;
+
     }
 
     body::-webkit-scrollbar,

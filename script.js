@@ -156,3 +156,14 @@ window.addEventListener('resize', () => {
         });
     }
 });
+
+const backToTop = document.querySelector('.back-to-top');
+
+// Show button after scrolling down 100px
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 100) {
+    backToTop.classList.add('show');
+  } else {
+    backToTop.classList.remove('show');
+  }
+});
