@@ -22,7 +22,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+
 }
 
 html, body {
@@ -30,6 +30,7 @@ html, body {
     padding: 0;
     background-color: var(--bg);
     overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -244,7 +245,7 @@ main {
 }
 
 main article {
-    max-width: 800px;
+    max-width: 700px;
     margin: 0;
     padding: 23px 2rem;
     background: var(--bg);
@@ -326,6 +327,26 @@ video {
   height: auto;
   border-radius: 0.6rem;
   margin: 0;
+}
+
+.custom-font {
+  font-family: "Ephesis", cursive;
+      font-size: 5rem;
+      line-height: 70px;
+}
+
+.thomas {
+   font-size: 1.2rem;
+
+}
+.centered-text {
+      
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left:-10px;
+    font-weight: normal;
+    text-align: center;
+
 }
 
 /* ---------- Mobile Styles (Max-width 768px) ---------- */
@@ -432,9 +453,16 @@ video {
         font-weight: 400;
     }
 
-    main article h1 { font-size: 1.2rem; font-weight: 500; margin: 0 0 0.6rem 0; color: var(--text); }
+    main article h1 { font-size: 1.1rem; font-weight: 500; margin: 0 0 0.6rem 0; color: var(--text); }
     main article h2 { font-size: 1rem; font-weight: 600; margin: 0.7rem 0 0.6rem 0; color: var(--text); }
     main article h3 { font-size: 0.9rem; font-weight: 700; margin: 1rem 0 0.6rem 0; color: var(--text); }
+
+    .custom-font {
+     font-family: "Ephesis", cursive;
+      font-size: 4rem;
+      line-height: 70px;
+}
+
 
     .quote {
     font-weight: 400;
