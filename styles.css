@@ -375,7 +375,7 @@ video {
   z-index: 1300;
 }
 
-#hamburger:hover {
+#hamburger:focus {
           -webkit-tap-highlight-color: transparent;
         -webkit-touch-callout: none;
         -webkit-user-select: none;

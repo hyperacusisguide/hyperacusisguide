@@ -1,5 +1,6 @@
 // ---------- DOM Elements ----------
 const hamburger = document.getElementById('hamburger');
+const hamburgerWrapper = document.getElementById('hamburger-wrapper'); // wrapper div
 const sidebar = document.getElementById('sidebar');
 const sidebarLinks = sidebar.querySelectorAll('a');
 const backToTop = document.querySelector('.back-to-top');
@@ -7,12 +8,11 @@ const backToTop = document.querySelector('.back-to-top');
 let scrollPosition = 0;
 
 // ---------- Hamburger Menu Toggle ----------
-hamburger.addEventListener('click', () => {
+function toggleMenu() {
     const isOpen = sidebar.classList.contains('open');
-
     if (isOpen) closeMenu();
     else openMenu();
-});
+}
 
 function openMenu() {
     scrollPosition = window.scrollY || window.pageYOffset;
@@ -61,6 +61,7 @@ const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 sidebarLinks.forEach(link => {
     link.classList.toggle('active', link.getAttribute('href') === currentPage);
 
+    // Close menu on link click
     link.addEventListener('click', () => {
         if (sidebar.classList.contains('open')) closeMenu();
     });
@@ -76,7 +77,7 @@ sidebarLinks.forEach(link => {
 document.addEventListener('click', e => {
     if (sidebar.classList.contains('open') &&
         !sidebar.contains(e.target) &&
-        !hamburger.contains(e.target)) {
+        !hamburgerWrapper.contains(e.target)) { // wrapper included
         closeMenu();
     }
 });
@@ -127,7 +128,12 @@ window.addEventListener('scroll', () => {
     backToTop.classList.toggle('show', window.scrollY > 100);
 });
 
-// Initialize
+// ---------- Initialize ----------
 document.addEventListener('DOMContentLoaded', () => {
     initBackToTop();
+});
+
+// ---------- Wrapper click triggers hamburger ----------
+hamburgerWrapper.addEventListener('click', () => {
+    toggleMenu();
 });
