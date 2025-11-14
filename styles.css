@@ -410,7 +410,7 @@ video {
 }
 
 .border{
-    background-color: rgba(255, 255, 255, 0.07);
+    background-color: rgba(255, 255, 255, 0.06);
     border: 0px solid;
     border-color: rgba(255, 255, 255, 0.2);
     border-radius: 0.9rem;
@@ -451,12 +451,12 @@ video {
     }
 
     nav#sidebar ul li a.tap-active {
-        background-color: rgba(255, 255, 255, 0.07);
+        background-color: rgba(255, 255, 255, 0.06);
         color: var(--text);
     }
 
     nav#sidebar ul li a.active {
-    background-color: rgba(255, 255, 255, 0.07);
+    background-color: rgba(255, 255, 255, 0.06);
     color: var(--text);
 }
 
@@ -513,7 +513,7 @@ html {
   height: 45px;
   border: 0px solid var(--accent, #b0b0b0);
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.06);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -541,7 +541,7 @@ html {
 
 /* Hover styling */
 .back-to-top:hover {
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.06);
   border-color: #e0e0e0;
 }
 
