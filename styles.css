@@ -331,7 +331,7 @@ video {
 
 .custom-font {
   font-family: "Ephesis", cursive;
-      font-size: 5rem;
+      font-size: 4rem;
       line-height: 70px;
 }
 
@@ -366,13 +366,12 @@ video {
   /* Hamburger button lines */
 #hamburger {
   position: relative;
-  width: 24px;
-  height: 24px;
+  width: 18px;
+  height: 22px;
   background: none;
   border: none;
   cursor: pointer;
   margin-bottom: 0px;
-  margin-right: 10px;
   z-index: 1300;
 }
 
@@ -391,12 +390,12 @@ video {
 /* Position each line */
 #hamburger span:nth-child(1) { top: 3px; }
 #hamburger span:nth-child(2) { top: 50%; transform: translateY(-50%); }
-#hamburger span:nth-child(3) { bottom: 3px; }
+#hamburger span:nth-child(3) { bottom: 3px; width: 60%; left: 0%; }
 
 /* Animate to X with a little left shift */
 #hamburger.active span:nth-child(1) {
   top: 50%;
-  transform: translate(6px, -50%) rotate(45deg); /* shift left by 2px */
+  transform: translate(0px, -50%) rotate(45deg); /* shift left by 2px */
 }
 
 #hamburger.active span:nth-child(2) {
@@ -405,7 +404,19 @@ video {
 
 #hamburger.active span:nth-child(3) {
   top: 50%;
-  transform: translate(6px, -50%) rotate(-45deg); /* same left shift */
+  left: 0;             /* keep left-anchored so the growth looks natural */
+  width: 100%;         /* expand to full width */
+  transform: translate(0px, -50%) rotate(-45deg);
+}
+
+.border{
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 0px solid;
+    border-color: rgba(255, 255, 255, 0.2);
+    border-radius: 0.9rem;
+    padding: 9px 11px 9px 11px; 
+    margin-right:4px;
+
 }
     main { margin: 0; margin-bottom: 4rem; height: auto; padding: 1rem; }
 
@@ -436,12 +447,18 @@ video {
         -webkit-tap-highlight-color: transparent;
         -webkit-touch-callout: none;
         -webkit-user-select: none;
+        border-radius: 0.5rem;
     }
 
     nav#sidebar ul li a.tap-active {
-        background-color: var(--focus);
+        background-color: rgba(255, 255, 255, 0.05);
         color: var(--text);
     }
+
+    nav#sidebar ul li a.active {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text);
+}
 
     main article {
         max-width: 100%;
@@ -459,7 +476,7 @@ video {
 
     .custom-font {
      font-family: "Ephesis", cursive;
-      font-size: 4rem;
+      font-size: 3.5rem;
       line-height: 70px;
 }
 
@@ -496,7 +513,7 @@ html {
   height: 45px;
   border: 0px solid var(--accent, #b0b0b0);
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.05);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -524,7 +541,7 @@ html {
 
 /* Hover styling */
 .back-to-top:hover {
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.05);
   border-color: #e0e0e0;
 }
 
