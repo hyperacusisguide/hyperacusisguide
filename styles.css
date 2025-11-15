@@ -457,12 +457,12 @@ video {
     }
 
     nav#sidebar ul li a.tap-active {
-        background-color: rgba(255, 255, 255, 0.08);
+        background-color: rgba(255, 255, 255, 0.06);
         color: var(--text);
     }
 
     nav#sidebar ul li a.active {
-    background-color: rgba(255, 255, 255, 0.08);
+    background-color: rgba(255, 255, 255, 0.06);
     color: var(--text);
 }
 
@@ -519,7 +519,7 @@ html {
   height: 45px;
   border: 0px solid var(--accent, #b0b0b0);
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: rgba(255, 255, 255, 0.06);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -536,19 +536,19 @@ html {
 /* CSS up arrow */
 .back-to-top::before {
   content: "";
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   margin-top: 5px;
   border-left: 3px solid var(--text, #e0e0e0);
   border-bottom: 3px solid var(--text, #e0e0e0);
-  border-radius: 1.5px;
+  border-radius: 0px;
   transform: rotate(135deg);
   transition: border-color 0.3s ease;
 }
 
 /* Hover styling */
 .back-to-top:hover {
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: rgba(255, 255, 255, 0.06);
           -webkit-tap-highlight-color: transparent;
         -webkit-touch-callout: none;
         -webkit-user-select: none;
@@ -556,7 +556,7 @@ html {
 }
 
 .back-to-top:focus {
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: rgba(255, 255, 255, 0.06);
   border-color: #e0e0e0;
 }
 
