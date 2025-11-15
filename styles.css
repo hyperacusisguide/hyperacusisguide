@@ -30,7 +30,7 @@ html, body {
     padding: 0;
     background-color: var(--bg);
     overflow-x: hidden;
-    font-family: "Poppins", sans-serif;
+      font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -65,12 +65,13 @@ header {
 }
 
 header .logo {
+    font-family: "Raleway", sans-serif;
     display: flex;
     align-items: center;
     gap: 0.6rem;
     padding-left: 16px;
     font-size: 1.05rem;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--text);
 }
 
@@ -91,7 +92,7 @@ header .logo i {
 }
 
 .a{
- font-weight: 500;
+ font-weight: 600;
 }
 
 .u{
@@ -140,8 +141,9 @@ nav#sidebar {
     height: 100%;
     padding: 80px 20px 0 20px;
     background-color: var(--menu);
+    line-height: 1.2rem;
     font-size: 0.8rem;
-    font-weight: 500;
+    font-weight: 400;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 }
@@ -385,7 +387,7 @@ video {
 @media (max-width: 768px) {
     header { position: static; height: 70px; left: 0; }
     #hamburger { display: block; }
-    header .logo { padding-left: 7px; font-size: 1.2rem; font-weight: 500;}
+    header .logo { padding-left: 7px; font-size: 1.3rem; font-weight: 600;}
     header .logo i { font-size: 1.3rem; }
 
  .logo-image{
@@ -472,6 +474,7 @@ video {
         transition: transform 0.3s ease;
         background-color: var(--bg);
         font-size: 0.95rem;
+        line-height: 1rem;
         z-index: 1100;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
@@ -525,7 +528,7 @@ video {
     }
 
     .link{
-    font-weight: 500;
+    font-weight: 400;
     }
 
 .table {
