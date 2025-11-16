@@ -254,7 +254,7 @@ padding:10px 20px 10px 20px;
   border-radius: 0.6rem;
   padding:10px 20px 10px 20px;
   font-style: normal; 
-  color: var(--text);
+  color: var(--accent);
 
 }
 
@@ -334,10 +334,18 @@ main article li { margin-bottom: 0.4rem; }
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
+.video-crop {
+  width: 100%;           /* fill the container width */
+  height: 356px;         /* match the placeholder height */
+  object-fit: cover;     /* crops top/bottom or sides to fill container */
+  object-position: center; /* center the video content */
+}
+
 .image-row {
   display: flex;
   gap: 1rem; /* optional spacing between images */
   margin-top:20px;
+  margin-bottom: 20px;
 
 }
 
