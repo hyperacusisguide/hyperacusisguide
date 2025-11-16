@@ -143,7 +143,7 @@ nav#sidebar {
     background-color: var(--menu);
     line-height: 1rem;
     font-size: 0.8rem;
-    font-weight: 400;
+    font-weight: 500;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 }
@@ -247,6 +247,17 @@ border-bottom-right-radius: 0.6rem;
 padding:10px 20px 10px 20px;
 }
 
+.warning{
+   background: rgb(220,0,0, 0.1);
+  border: 1px solid #dc0000;
+  border-width: 1px 1px 1px 1px; 
+  border-radius: 0.6rem;
+  padding:10px 20px 10px 20px;
+  font-style: normal; 
+  color: var(--text);
+
+}
+
 .table ul li {
     margin: 0 0 0 0;
     padding-left: 0rem;
@@ -321,6 +332,31 @@ main article li { margin-bottom: 0.4rem; }
     margin: 1.5rem 0;
     text-align: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.image-row {
+  display: flex;
+  gap: 1rem; /* optional spacing between images */
+  margin-top:20px;
+
+}
+
+.image-row img {
+  width: 50%;        /* each image takes half of the row */
+  height: auto;      /* keep aspect ratio */
+  object-fit: cover; /* optional, keeps image visually nice */
+  min-width: 0;      /* ensures images shrink properly in flex */
+  border-radius: 0.6rem;
+}
+
+article img.half-width-image {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    margin: 1rem 0rem 1rem 0;
+    padding: 0;
+    border-radius: 0.6rem;
+    background-color: var(--menu);
 }
 
 article img.full-width-image-silverstein {
@@ -479,6 +515,7 @@ video {
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
         touch-action: pan-y;
+        font-weight: 400;
     }
 
     nav#sidebar.open { transform: translateY(0); }
@@ -523,13 +560,18 @@ video {
 }
 
     .quote {
-    font-weight: 400;
-    font-size: 0.95rem;
+    font-weight: 300;
+    font-size: 1.05rem;
     }
 
     .link{
     font-weight: 400;
     }
+
+
+.warning{
+  padding:20px 20px 16px 20px;
+}
 
 .table {
   display: flex;
