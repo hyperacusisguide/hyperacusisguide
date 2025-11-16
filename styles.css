@@ -334,12 +334,22 @@ main article li { margin-bottom: 0.4rem; }
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-.video-crop {
-  width: 100%;           /* fill the container width */
-  height: 356px;         /* match the placeholder height */
-  object-fit: cover;     /* crops top/bottom or sides to fill container */
-  object-position: center; /* center the video content */
+.video-container {
+  position: relative;
+  width: 100%;           /* fills the width of its parent */
+  padding-top: 55%;   /* 16:9 aspect ratio; adjust as needed */
+  overflow: hidden;
 }
+
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* crops the video to fill container */
+}
+
 
 .image-row {
   display: flex;
