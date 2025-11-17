@@ -411,17 +411,31 @@ article img.full-width-image:first-child {
     font-size: 0.9rem;
 }
 
+/* Responsive wrapper with preserved aspect ratio */
 .video-wrapper {
-  border-radius: 0.6rem;
-  overflow: hidden;   /* CRITICAL */
+  position: relative;
   width: 100%;
+  padding-top: 56.25%; /* 16:9 aspect ratio – adjust if needed */
+  border-radius: 0.6rem;
+  overflow: hidden; /* clips children */
 }
 
+/* Video fills the wrapper */
 .video-wrapper video {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
+  object-fit: cover;
+
+  /* Critical for mobile Safari poster clipping */
+  border-radius: inherit;
+  overflow: hidden;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
+
 
 .custom-font {
   font-family: "Ephesis", cursive;
