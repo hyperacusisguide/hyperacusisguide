@@ -350,6 +350,23 @@ main article li { margin-bottom: 0.4rem; }
   object-fit: cover;      /* crops the video to fill container */
 }
 
+.image-row-1 {
+  display: flex;
+  gap: 1rem;            /* space between images */
+  width: 100%;           /* fill the article */
+  align-items: flex-start;
+    margin-top:20px;
+  margin-bottom: 20px;
+}
+
+.image-row-1 img {
+  display: block;
+  width: auto;          /* maintain aspect ratio */
+  height: auto;         /* natural aspect ratio */
+  max-width: 100%;      /* shrink to fit container */
+  object-fit: contain;
+  border-radius: 0.6rem;
+}
 
 .image-row {
   display: flex;

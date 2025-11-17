@@ -137,3 +137,23 @@ document.addEventListener('DOMContentLoaded', () => {
 hamburgerWrapper.addEventListener('click', () => {
     toggleMenu();
 });
+
+const img1 = document.querySelector('.img-1');
+const img2 = document.querySelector('.img-2');
+
+function matchHeight() {
+  const containerWidth = img1.parentElement.clientWidth;
+  
+  // scale first image to max 50% of container width
+  img1.style.width = '54%';
+  img1.style.height = 'auto';
+
+  // match second image height dynamically
+  const h = img1.clientHeight;
+  img2.style.height = `${h}px`;
+  img2.style.width = 'auto';
+}
+
+// run on load and resize
+window.addEventListener('load', matchHeight);
+window.addEventListener('resize', matchHeight);
