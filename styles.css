@@ -85,10 +85,10 @@ header .logo i {
 }
 
 .logo-image{
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   margin-left: -13px;
-  margin-right: -18px;
+  margin-right: -17px;
 }
 
 .a{
@@ -191,6 +191,58 @@ nav#sidebar ul li a.active {
 
 /* ---------- Main Content (Desktop) ---------- */
 
+.nested-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem; /* space between the two columns on desktop */
+}
+
+/* Keep indentation + bullets; remove only vertical gap between ULs */
+.nested-columns ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0rem; /* default indentation */
+  list-style: disc;
+  list-style-position: outside;
+}
+
+/* Restore normal spacing between LI items */
+.nested-columns ul li {
+  margin-bottom: 0.5rem; /* adjust as needed */
+}
+
+.nested-columns ul li:last-child {
+  margin-bottom: 0; /* clean ending */
+}
+
+@media (max-width: 768px) {
+  .nested-columns {
+    grid-template-columns: 1fr; 
+    gap: 0; /* remove gap between the two ULs when stacked */
+  }
+
+  /* Keep UL indentation + bullets, but remove gap between ULs */
+  .nested-columns ul {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  /* Keep normal LI spacing */
+  .nested-columns ul li {
+    margin-bottom: 0.5rem;
+  }
+
+  .nested-columns ul li:last-child {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.white{
+   color: var(--text);
+}
+
+
+
 .table {
   display: flex;
   flex-direction: column;
@@ -208,6 +260,21 @@ border-top-right-radius: 0.6rem;
 .bottom {
 border-bottom-left-radius: 0.6rem;
 border-bottom-right-radius: 0.6rem; 
+}
+
+.orange{
+color: #F8B683;
+font-weight: 400;
+}
+
+.green{
+color: #93D0A7;
+font-weight: 400;
+}
+
+.red{
+color: #DE7176;
+font-weight: 400;
 }
 
 .row1 {
