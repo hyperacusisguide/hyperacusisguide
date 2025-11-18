@@ -296,26 +296,36 @@ font-size: 0.8rem;
 }
 
 #copy-overlay {
+  /* Positioning and Sizing for Full Screen Coverage */
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  padding-top: env(safe-area-inset-top);
-  padding-bottom: env(safe-area-inset-bottom);
-  background-color: rgba(0,0,0,0.5);
+  width: 100vw; /* Use viewport width */
+  height: 100vh; /* Use viewport height */
+  min-height: -webkit-fill-available; /* iOS-specific full height hack */
+  
+  /* Layout and Styling */
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
   z-index: 9999;
+  
+  /* Repainting Fix (CRITICAL for iOS Safari) */
+  transform: translateZ(0); /* Forces GPU layer for clean cleanup */
+  
+  /* Transitions and Initial State */
+  opacity: 0;
+  pointer-events: none; /* Allows clicks on elements underneath */
+  transition: opacity 0.3s ease;
+  
+  /* Optional: Remove any padding that uses safe-area-inset-* unless you want the *content* to be pushed down. 
+     The background should cover everything. */
 }
 
 #copy-overlay.show {
   opacity: 1;
-  pointer-events: all;
+  pointer-events: all; /* Blocks clicks while visible */
 }
 
 #copy-message {
