@@ -160,23 +160,25 @@ window.addEventListener('resize', matchHeight);
 
 
 function copyAnchorLink(button) {
+  // Get the target anchor ID
   const anchorId = button.getAttribute('data-anchor');
+  
+  // Build the full URL
   const url = window.location.origin + window.location.pathname + '#' + anchorId;
 
+  // Copy to clipboard
   navigator.clipboard.writeText(url)
     .then(() => {
       const overlay = document.getElementById('copy-overlay');
-      overlay.classList.add('show');  // fade in
 
+      // Fade in overlay
+      overlay.classList.add('show');
+
+      // Fade out after 2 seconds
       setTimeout(() => {
-        overlay.classList.remove('show'); // fade out
-
-        // Force repaint on iOS Safari to remove dark bars
-        document.body.style.transform = 'scale(1)';
-        setTimeout(() => {
-          document.body.style.transform = '';
-        }, 50);
+        overlay.classList.remove('show');
       }, 2000);
     })
     .catch(err => console.error('Failed to copy: ', err));
 }
+
