@@ -594,7 +594,7 @@ article img.full-width-image:first-child {
 
 .link-icon {
   margin-top: 6px;
-  font-size: 16px; /* Adjust this to make the icon bigger or smaller */
+  font-size: 14px; /* Adjust this to make the icon bigger or smaller */
     margin-left: 26px;/* Align to left edge */
   color: var(--accent);  /* Single color */
   cursor: pointer;
