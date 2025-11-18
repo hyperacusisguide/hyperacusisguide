@@ -287,8 +287,63 @@ font-size: 0.8rem;
   border: solid #b0b0b0;
   padding: 10px;
   border-width: 1px 1px 0 1px; 
-  text-align: center;
+  
+  display: flex;
+  align-items: center;      /* Vertically center icon and text */
+  justify-content: center;  /* Center text container horizontally */
 
+
+}
+
+#copy-overlay {
+  display: flex;             /* flex to center message */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 0;               /* initially invisible */
+  pointer-events: none;     /* clicks pass through when invisible */
+  transition: opacity 0.3s ease;
+}
+
+#copy-overlay.show {
+  opacity: 1;               /* visible when .show is added */
+  pointer-events: all;      /* block clicks while visible */
+}
+
+#copy-message {
+  background-color: #333334;
+  color: var(--text);
+  padding: 20px 40px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+.link-icon {
+  font-size: 16px; /* Adjust this to make the icon bigger or smaller */
+  color: var(--accent);  /* Single color */
+  cursor: pointer;
+}
+
+.icon {
+  position: absolute;       /* Take icon out of normal flow */
+  left: 0;
+  margin-left: 50px;/* Align to left edge */
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.center-text {
+  text-align: center;       /* Center the text inside its own div */
+  width: 100%;              /* Take full width so centering works */
 }
 
 .row2 {
@@ -535,6 +590,15 @@ article img.full-width-image:first-child {
     #hamburger { display: block; }
     header .logo { padding-left: 7px; font-size: 1.2rem; font-weight: 600;}
     header .logo i { font-size: 1.1rem; }
+
+
+  .icon{
+  position: absolute;       /* Take icon out of normal flow */
+  left: 0;
+  margin-left: 26px;/* Align to left edge */
+  cursor: pointer;
+  font-size: 16px;
+}
 
  .logo-image{
   width: 46px;

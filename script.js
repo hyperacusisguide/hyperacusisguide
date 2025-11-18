@@ -157,3 +157,17 @@ function matchHeight() {
 // run on load and resize
 window.addEventListener('load', matchHeight);
 window.addEventListener('resize', matchHeight);
+
+function copyLink() {
+  const url = 'https://www.hyperacusisguide.org/hyperacusis.html#severity';
+  navigator.clipboard.writeText(url)
+    .then(() => {
+      const overlay = document.getElementById('copy-overlay');
+      overlay.classList.add('show');  // fade in
+
+      setTimeout(() => {
+        overlay.classList.remove('show'); // fade out after 2s
+      }, 2000);
+    })
+    .catch(err => console.error('Failed to copy: ', err));
+}
