@@ -738,7 +738,8 @@ article img.full-width-image:first-child {
     nav#sidebar.open { transform: translateY(0); }
 
     nav#sidebar ul li a {
-        padding: 0.9rem 1rem;
+        padding: 0.9rem 1rem 0.9rem 1.3rem;
+     
         -webkit-tap-highlight-color: transparent;
         -webkit-touch-callout: none;
         -webkit-user-select: none;
