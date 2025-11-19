@@ -339,7 +339,7 @@ font-size: 0.8rem;
   background-color: #333334;
   color: var(--text);
   padding: 20px 40px;
-  border-radius: 8px;
+  border-radius: 5rem;
   font-size: 20px;
   font-weight: bold;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
@@ -350,7 +350,7 @@ font-size: 0.8rem;
   display: inline-block;    /* keep it inline */
   vertical-align: middle;   /* align with text vertically */
   font-size: 14px;
-  margin-left: 4px;         /* small space after text */
+  margin-left: 0px;         /* small space after text */
   color: var(--accent);
   cursor: pointer;
   margin-top: 0;            /* remove the margin-top that causes line break */
