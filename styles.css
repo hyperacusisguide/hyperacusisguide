@@ -704,7 +704,7 @@ article img.full-width-image:first-child {
 
 .border{
     background-color: rgba(255, 255, 255, 0.06);
-    border: 1px solid;
+    border: 0px solid;
     border-color: rgba(255, 255, 255, 0.1);
     border-radius: 0.9rem;
     padding: 9px 11px 9px 11px; 
@@ -739,7 +739,7 @@ article img.full-width-image:first-child {
 
     nav#sidebar ul li a {
         padding: 0.9rem 1rem 0.9rem 1.2rem;
-    
+     
         -webkit-tap-highlight-color: transparent;
         -webkit-touch-callout: none;
         -webkit-user-select: none;
@@ -824,57 +824,61 @@ html {
   scroll-behavior: smooth; /* smooth scrolling */
 }
 
+/* Back-to-top button */
 .back-to-top {
   position: fixed;
   bottom: 20px;
   right: 20px;
   width: 45px;
   height: 45px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   background-color: #333334;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.3s ease, opacity 0.3s ease;
-  z-index: 999;
   text-decoration: none;
   font-size: 0;
   color: transparent;
-  opacity: 0;           /* hidden by default */
-  pointer-events: none; /* not clickable when hidden */
+
+  opacity: 0;               /* hidden by default */
+  pointer-events: none;      /* not clickable when hidden */
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  z-index: 999;
+
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
 }
 
-/* CSS up arrow */
+/* Arrow icon */
 .back-to-top::before {
   content: "";
   width: 10px;
   height: 10px;
-  margin-top: 5px;
-  border-left: 2px solid var(--text, #e0e0e0);
-  border-bottom: 2px solid var(--text, #e0e0e0);
-  border-radius: 0px;
+  border-left: 2px solid #e0e0e0;
+  border-bottom: 2px solid #e0e0e0;
   transform: rotate(135deg);
   transition: border-color 0.3s ease;
+  margin-top: 5px;
 }
 
-/* Hover styling */
-.back-to-top:hover {
-  background-color: rgba(255, 255, 255, 0.06);
-          -webkit-tap-highlight-color: transparent;
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-  border-color: #e0e0e0;
+/* Hover/focus effects */
+.back-to-top.show:hover,
+.back-to-top.show:focus {
+  transform: scale(1.1);
+  outline: none;
 }
 
-.back-to-top:focus {
-  background-color: rgba(255, 255, 255, 0.06);
-  border-color: #e0e0e0;
+.back-to-top.show:hover::before,
+.back-to-top.show:focus::before {
+  border-color: #fff;
 }
 
-.back-to-top:hover::before {
-  border-color: #e0e0e0;
+/* Keep fully opaque when pressed/focused */
+.back-to-top.show:active,
+.back-to-top.show:focus {
+  opacity: 1;
 }
 
 /* Visible state */
@@ -882,6 +886,7 @@ html {
   opacity: 1;
   pointer-events: auto;
 }
+
 
 
     article img.full-width-image { width: 100%; }
