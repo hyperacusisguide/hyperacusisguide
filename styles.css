@@ -618,7 +618,7 @@ article img.full-width-image:first-child {
 
 
 .link-icon {
-  font-size: 16px; /* Adjust this to make the icon bigger or smaller */
+  font-size: 14px; /* Adjust this to make the icon bigger or smaller */
   color: var(--accent);  /* Single color */
   cursor: pointer;
     -webkit-tap-highlight-color: transparent; /* remove tap highlight */
@@ -631,7 +631,7 @@ article img.full-width-image:first-child {
 }
 
 .link-icon:hover{
-  font-size: 16px; /* Adjust this to make the icon bigger or smaller */
+  font-size: 14px; /* Adjust this to make the icon bigger or smaller */
   color: var(--accent);  /* Single color */
   cursor: pointer;
     -webkit-tap-highlight-color: transparent; /* remove tap highlight */
