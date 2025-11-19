@@ -160,44 +160,34 @@ window.addEventListener('resize', matchHeight);
 
 
 function copyAnchorLink(button) {
-  // Get the target anchor ID
   const anchorId = button.getAttribute('data-anchor');
-  
-  // Build the full URL
   const url = window.location.origin + window.location.pathname + '#' + anchorId;
+  
+  // Constants based on your CSS and requirement
+  const DISPLAY_TIME_MS = 2000;
+  const FADE_TIME_MS = 300; // Matches your CSS transition time
 
-  // Configuration Constants
-  const DISPLAY_TIME_MS = 2000; // How long the overlay is fully visible
-  const FADE_TIME_MS = 300;   // Must match the CSS transition time (0.3s)
-
-  // Copy to clipboard
   navigator.clipboard.writeText(url)
     .then(() => {
       const overlay = document.getElementById('copy-overlay');
 
-      // 1. Prepare to Fade In
-      // Must set display property first, before adding 'show' class
+      // 1. Show the overlay
+      // Ensure display is 'flex' before starting the fade-in
       overlay.style.display = 'flex'; 
-      
-      // Forces a repaint/reflow before applying the transition for the fade-in
-      requestAnimationFrame(() => {
-        // Fade In overlay (opacity: 0 -> 1)
-        overlay.classList.add('show');
-      });
+      overlay.classList.add('show');
 
-      // 2. Start the Fade Out after display time
+      // 2. Start the fade-out after the display time
       setTimeout(() => {
         // Initiate the CSS transition (opacity: 1 -> 0)
         overlay.classList.remove('show'); 
 
-        // 3. CRITICAL FIX: Wait for the transition to finish, then hide
+        // 3. CRITICAL Cleanup: Wait for the 0.3s fade to finish, then hide
         setTimeout(() => {
-          // This forces a complete cleanup of the fixed element's rendering layer
+          // This forces a complete cleanup of the rendering layer
           overlay.style.display = 'none'; 
         }, FADE_TIME_MS);
 
       }, DISPLAY_TIME_MS);
     })
-    .catch(err => console.error('Failed to copy failed: ', err));
+    .catch(err => console.error('Failed to copy: ', err));
 }
-

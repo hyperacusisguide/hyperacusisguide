@@ -296,36 +296,39 @@ font-size: 0.8rem;
 }
 
 #copy-overlay {
-  /* Positioning and Sizing for Full Screen Coverage */
+  /* Positioning the element relative to the content area */
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw; /* Use viewport width */
-  height: 100vh; /* Use viewport height */
-  min-height: -webkit-fill-available; /* iOS-specific full height hack */
   
-  /* Layout and Styling */
+  /* 1. Define the TOP-LEFT corner based on the safe area insets */
+  top: env(safe-area-inset-top);
+  left: env(safe-area-inset-left);
+  
+  /* 2. Calculate the WIDTH and HEIGHT to fill the space *between* the insets */
+  /* Subtracts the left and right insets from the total viewport width (100vw) */
+  width: calc(100vw - env(safe-area-inset-left) - env(safe-area-inset-right));
+  
+  /* Subtracts the top and bottom insets from the total viewport height (100vh) */
+  height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+  
+  /* The rest of your styles */
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 9999;
   
-  /* Repainting Fix (CRITICAL for iOS Safari) */
-  transform: translateZ(0); /* Forces GPU layer for clean cleanup */
+  /* Keep the hardware acceleration fix for better repainting within the boundary */
+  transform: translateZ(0); 
   
   /* Transitions and Initial State */
   opacity: 0;
-  pointer-events: none; /* Allows clicks on elements underneath */
+  pointer-events: none;
   transition: opacity 0.3s ease;
-  
-  /* Optional: Remove any padding that uses safe-area-inset-* unless you want the *content* to be pushed down. 
-     The background should cover everything. */
 }
 
 #copy-overlay.show {
   opacity: 1;
-  pointer-events: all; /* Blocks clicks while visible */
+  pointer-events: all;
 }
 
 #copy-message {
