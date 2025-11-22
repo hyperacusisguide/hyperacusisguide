@@ -218,10 +218,14 @@ nav#sidebar ul li.icon-item {
 
 .nav-icon{
     fill: var(--accent);
+    height: 20px;
+    width: 20px;
 }
 
 .nav-icon:hover{
     fill: var(--text);
+    height: 20px;
+    width: 20px;
 }
 
 /* ---------- Main Content (Desktop) ---------- */
@@ -789,6 +793,37 @@ article img.full-width-image:first-child {
     nav#sidebar ul li a.active {
     background-color: rgba(255, 255, 255, 0.06);
     color: var(--text);
+}
+
+nav#sidebar ul li a.no-decoration,
+nav#sidebar ul li a.no-decoration:hover,
+nav#sidebar ul li a.no-decoration:active,
+nav#sidebar ul li a.no-decoration:focus,
+nav#sidebar ul li a.no-decoration:focus-visible {
+    display: block;
+    padding: 0.9rem 1rem 0.9rem 1.2rem;
+    text-decoration: none;
+    color: var(--test);
+    border-radius: 0.3rem;
+    -webkit-tap-highlight-color: transparent;
+
+    /* Remove all visual feedback */
+    outline: none !important;
+    box-shadow: none !important;
+    background: none !important;
+    text-decoration: none !important;
+}
+
+.nav-icon{
+    fill: var(--accent);
+    height: 26px;
+    width: 26px;
+}
+
+.nav-icon:hover{
+    fill: var(--text);
+    height: 26px;
+    width: 26px;
 }
 
 .orange{
