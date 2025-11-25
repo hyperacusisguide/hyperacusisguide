@@ -105,10 +105,10 @@ nav#sidebar ul li a.active {
     main article h2 { font-size: 1.05rem; font-weight: 500; margin: 0.7rem 0 0.6rem 0; color: var(--text); line-height: 1.7rem;}
     main article h3 { font-size: 0.9rem; font-weight: 700; margin: 1rem 0 0.6rem 0; color: var(--text); }
 
-    .border {background-color:#edeae8}
+    .border {background-color: rgba(83,71,65,0.1)}
     .back-to-top {
 
-  background-color: #edeae8;
+  background-color: #E5E3E2;
 
 }
 
@@ -128,25 +128,25 @@ nav#sidebar ul li a.active {
     @media (hover: none) and (pointer: coarse) {
     nav#sidebar ul li a:focus {
         outline: none;
-        background-color: #edeae8; /* match your tap color */
+        background-color: #E5E3E2; /* match your tap color */
         color: #534741;
     }
 }
 
 nav#sidebar ul li a.tap-active {
-  background-color: #edeae8;
+  background-color: #E5E3E2;
   color: #534741;
   transition: background-color 0.2s;
 }
 
 nav#sidebar ul li a.active {
-    background-color: #edeae8;
+    background-color: #E5E3E2;
     color: #534741;
 }
 
 @media (hover: hover) and (pointer: fine) {
     nav#sidebar ul li a:hover {
-        background-color: #edeae8;
+        background-color: #E5E3E2;
         color: #534741;
     }
 }
