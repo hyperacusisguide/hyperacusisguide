@@ -205,7 +205,7 @@ header {
 }
 
 header .logo {
-    font-family: "Raleway", sans-serif;
+    font-family: "Figtree", sans-serif;
     display: flex;
     align-items: center;
     gap: 0.6rem;
@@ -271,23 +271,26 @@ header .logo i {
 }
 
 .a{
- font-weight: 600;
-}
-
-.u{
- font-weight: 300;
-}
-
-.i{
  font-weight: 400;
 }
 
+.g{
+ font-weight: 600;
+}
+.u{
+ font-weight: 600;
+}
+
+.i{
+ font-weight: 600;
+}
+
 .d{
- font-weight: 500;
+ font-weight: 600;
 }
 
 .e{
- font-weight: 500;
+ font-weight: 600;
 
 }
 
