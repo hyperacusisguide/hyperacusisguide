@@ -14,7 +14,7 @@
     color-scheme: dark;
 
     .a{color:var(--accent);
-    font-weight: 600}
+    font-weight: 500}
     .glow{color:var(--text)}
 }
 
@@ -217,7 +217,7 @@ header .logo {
     gap: 0.6rem;
     padding-left: 16px;
     font-size: 1.05rem;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--text);
 }
 
@@ -281,22 +281,22 @@ header .logo i {
 }
 
 .g{
- font-weight: 600;
+ font-weight: 500;
 }
 .u{
- font-weight: 600;
+ font-weight: 500;
 }
 
 .i{
- font-weight: 600;
+ font-weight: 500;
 }
 
 .d{
- font-weight: 600;
+ font-weight: 500;
 }
 
 .e{
- font-weight: 600;
+ font-weight: 500;
 
 }
 
