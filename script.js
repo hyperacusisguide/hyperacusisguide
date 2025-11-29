@@ -12,8 +12,8 @@ const html = document.documentElement; // Represents the <html> tag
 
 const THEME_KEY = 'userTheme'; // Key for localStorage
 // --- DEFINE LOGO PATHS HERE (ADJUST FOLDER NAME IF NECESSARY) ---
-const DARK_LOGO_PATH = 'logo.png'; 
-const LIGHT_LOGO_PATH = 'light-logo.png'; 
+const DARK_LOGO_PATH = 'hg.png'; 
+const LIGHT_LOGO_PATH = 'hg-light.png'; 
 
 let scrollPosition = 0;
 

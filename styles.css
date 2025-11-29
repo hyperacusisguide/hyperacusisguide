@@ -13,7 +13,7 @@
     --menu: #2A2A2B;
     color-scheme: dark;
 
-    .a{color:var(--accent);
+    .a{color:var(--text);
     font-weight: 500}
     .glow{color:var(--text)}
 }
@@ -216,7 +216,7 @@ header .logo {
     align-items: center;
     gap: 0.6rem;
     padding-left: 16px;
-    font-size: 1.05rem;
+    font-size: 0.9rem;
     font-weight: 500;
     color: var(--text);
 }
@@ -270,14 +270,13 @@ header .logo i {
 }
 
 .logo-image{
-  width: 38px;
-  height: 38px;
-  margin-left: -13px;
-  margin-right: -17px;
+  width: 22px;
+  margin-left: 0px;
+  margin-right: -2px;
 }
 
 .a{
- font-weight: 400;
+ font-weight: 500;
 }
 
 .g{
@@ -302,7 +301,8 @@ header .logo i {
 
 .guide-word {
   display: inline; /* or inline-block */
-  font-size: 1.1rem;
+  margin-top: -2px;
+  font-size: 1.05rem;
 
 }
 .guide-word span {
@@ -954,10 +954,9 @@ article img.full-width-image:first-child {
 }
 
  .logo-image{
-  width: 46px;
-  height: 46px;
-  margin-left: -15px;
-  margin-right: -19px;
+  width: 26px;
+  margin-left: 0px;
+  margin-right: 0px;
   }
 
   /* Hamburger button lines */
