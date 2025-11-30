@@ -271,6 +271,7 @@ header .logo i {
 
 .logo-image{
   width: 22px;
+  height: auto:
   margin-left: 0px;
   margin-right: -2px;
 }
@@ -955,6 +956,7 @@ article img.full-width-image:first-child {
 
  .logo-image{
   width: 26px;
+  height: auto;
   margin-left: 0px;
   margin-right: 0px;
   }
