@@ -1179,10 +1179,11 @@ html {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 45px;
-  height: 45px;
+  width: 42px;
+  height: 42px;
+  border: 1px solid #606060;
   border-radius: 50%;
-  background-color: #505050;
+  background-color: #404040;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1216,7 +1217,7 @@ html {
 /* Hover/focus effects */
 .back-to-top.show:hover,
 .back-to-top.show:focus {
-  transform: scale(1.1);
+  transform: scale(1);
   outline: none;
 }
 
