@@ -16,6 +16,30 @@
     .a{color:var(--text);
     font-weight: 500}
     .glow{color:var(--text)}
+
+    .scratch{
+    text-decoration: none;
+    }
+
+    .community{
+  background: rgb(0,172,70, 0.1);
+  border: solid 2px #00ac46;
+  padding: 10px 20px 10px 20px;
+  color: var(--accent);
+  border-radius: 100px;
+  border-color: #00ac46;
+}
+
+.community:hover{
+  cursor: pointer;
+  background: rgb(0,172,70, 0.2);
+  border: solid 2px #00ac46;
+  padding: 10px 20px 10px 20px;
+  color: var(--text);
+  border-radius: 100px;
+  border-color: #00ac46;
+}
+
 }
 
 .light-mode {
@@ -35,6 +59,25 @@
     header {border-bottom: 1px solid #534741cc; background-color: var(--header)};
     main article {font-weight:400};
     #copy-message {color: #ffffff};
+
+    .community{
+  background: var(--bg);
+  border: solid 2px #00ac46;
+  padding: 10px 20px 10px 20px;
+  color: var(--accent);
+  border-radius: 100px;
+  border-color: var(--text);
+}
+
+.community:hover{
+  cursor: pointer;
+  background: white;
+  border: solid 2px #00ac46;
+  padding: 10px 20px 10px 20px;
+  color: var(--text);
+  border-radius: 100px;
+  border-color: var(--text)
+}
 
     .a{opacity:100%}
    
@@ -429,6 +472,12 @@ nav#sidebar ul li.icon-item {
 
 /* ---------- Main Content (Desktop) ---------- */
 
+.community::after {
+  content: "Click Here To Join Our Community";
+  font-weight: 600;
+}
+
+
 .discord {
   
   position: relative;
@@ -438,7 +487,7 @@ nav#sidebar ul li.icon-item {
 }
 
 .discord span {
-padding-left: 28px;
+padding-left: 26px;
 }
 
 .nav-icon path {
@@ -470,6 +519,11 @@ padding-left: 28px;
 }
 
 @media (max-width: 768px) {
+
+.community::after {
+  content: "Tap Here To Join Our Community";
+  font-weight: 600;
+}
 
 .guide-word {
   display: inline; /* or inline-block */
@@ -677,8 +731,6 @@ font-size: 0.8rem;
 }
 
 .row2 {
-  background: rgb(0,172,70, 0.1);
-  border: solid #00ac46;
   background: rgb(0,172,70, 0.1);
   border: solid #00ac46;
   border-width: 0 1px 0 1px; /* top right bottom left */
@@ -945,11 +997,22 @@ article img.full-width-image:first-child {
       
     margin-top: 40px;
     margin-bottom: 50px;
-    margin-left:-13px;
+    margin-left:-11px;
     font-weight: normal;
     text-align: center;
 
 }
+
+.centered-text-1 {
+      
+    margin-top: 40px;
+    margin-bottom: 50px;
+    margin-left: 0px;
+    font-weight: normal;
+    text-align: center;
+
+}
+
 
 /* ---------- Mobile Styles (Max-width 768px) ---------- */
 @media (max-width: 768px) {
@@ -1118,7 +1181,7 @@ nav#sidebar ul li a.no-decoration:focus-visible {
 }
 
 .discord span {
-padding-left: 38px;
+padding-left: 34px;
 }
 
 .nav-icon{
