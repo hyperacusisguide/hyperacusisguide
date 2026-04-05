@@ -754,7 +754,16 @@ font-size: 0.8rem;
   border-width: 0 1px 1px 1px; 
 }
 
-.row2, .row3, .row4, .row5 {
+.row6 {
+  background: rgb(0,172,70, 0.1);
+  border: solid #00ac46;
+  border-radius: 0.6rem;
+  border-width: 1px 1px 1px 1px; 
+  padding:10px 20px 10px 20px;
+}
+
+
+.row2, .row3, .row4, .row5{
 padding:10px 20px 10px 20px;
 }
 
@@ -780,11 +789,11 @@ padding:10px 20px 10px 20px;
 }
 
 .keyword{
-   background: rgb(253,140,0, 0.1);
-  border: solid #fd8c00;
+   background: rgb(176,176,176, 0.1);
+  border: solid #b0b0b0;
   border-width: 1px 1px 1px 1px; 
   border-radius: 0.6rem;
-  padding:18px 20px 16px 20px;
+  padding:12px 20px 10px 20px;
   font-style: normal; 
   color: var(--accent);
 
@@ -813,6 +822,20 @@ padding:10px 20px 10px 20px;
 
 .table-ldl ul:last-child {
     margin: 0.5rem 0 0rem 1.4rem;
+    padding-left: 0.5rem;
+    list-style-position: outside;
+    list-style-type: disc;
+}
+
+.table-ldl-1 ul li {
+    margin: 0 0 0 0;
+    padding-left: 0rem;
+    list-style-position: outside;
+    list-style-type: disc;
+}
+
+.table-ldl-1 ul:last-child {
+    margin: 0.5rem 0 0.5rem 1.4rem;
     padding-left: 0.5rem;
     list-style-position: outside;
     list-style-type: disc;
@@ -1256,7 +1279,15 @@ font-size: 0.9rem;
 .ldl-test{
 
   border-radius: 0.6rem;
-  padding:20px 20px 28px 20px;
+  padding:20px 20px 20px 20px;
+
+
+}
+
+.ldl-test-1{
+
+  border-radius: 0.6rem;
+  padding:20px 20px 20px 20px;
 
 
 }
