@@ -22,22 +22,21 @@
     }
 
     .community{
-  background: none;
-  border: solid 2px #00ac46;
+  background: #323232;
+  border: solid 1px #444444;
   padding: 10px 20px 10px 20px;
   color: var(--text);
   border-radius: 100px;
-  border-color: #00ac46;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0);
 }
 
 .community:hover{
   cursor: pointer;
-  background: rgb(0,172,70, 0.1);
-  border: solid 2px #00ac46;
+  background: #3c3c3c;
+  border: solid 1px #444444;
   padding: 10px 20px 10px 20px;
   color: var(--text);
   border-radius: 100px;
-  border-color: #00ac46;
 }
 
 }
@@ -62,7 +61,7 @@
 
     .community{
   background: var(--menu);
-  border: solid 2px #00ac46;
+  border: solid 1px #00ac46;
   padding: 10px 20px 10px 20px;
   color: var(--accent);
   border-radius: 100px;
@@ -72,7 +71,7 @@
 .community:hover{
   cursor: pointer;
   background: white;
-  border: solid 2px #00ac46;
+  border: solid 1px #00ac46;
   padding: 10px 20px 10px 20px;
   color: var(--text);
   border-radius: 100px;
@@ -473,8 +472,8 @@ nav#sidebar ul li.icon-item {
 /* ---------- Main Content (Desktop) ---------- */
 
 .community::after {
-  content: "Click Here To Join Our Community";
-  font-weight: 600;
+  content: "Click here to join our community";
+  font-weight: 500;
   font-size: 1
 }
 
@@ -522,8 +521,8 @@ padding-left: 26px;
 @media (max-width: 768px) {
 
 .community::after {
-  content: "Tap Here To Join Our Community";
-  font-weight: 600;
+  content: "Tap here to join our community";
+  font-weight: 500;
 }
 
 .guide-word {
@@ -1315,7 +1314,7 @@ html {
   right: 20px;
   width: 42px;
   height: 42px;
-  border: 1px solid #444444;
+  border: 1px solid #404040;
   border-radius: 50%;
   background-color: #323232;
   display: flex;
