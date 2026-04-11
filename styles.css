@@ -15,7 +15,7 @@
 
     .a{color:var(--accent);
     font-weight: 500}
-    .glow{color:var(--text)}
+    .glow{color: var(--text);}
 
     .scratch{
     text-decoration: none;
@@ -374,7 +374,8 @@ color: red;
 
 .glow{
      text-shadow:
-    0 0 20px rgba(255, 255, 255, 0.2); /* Outer, more diffused glow */
+    0px 0px 30px rgba(255, 255, 255, 0); /* Outer, more diffused glow */
+    z-index: 2000;
 }
 
 /* ---------- Hamburger Button (Mobile Only) ---------- */
@@ -1225,12 +1226,12 @@ nav#sidebar ul li a.no-decoration:focus-visible {
 }
 
 .discord span {
-padding-left: 38px;
+padding-left: 33px;
 }
 
 .nav-icon{
     position: absolute;
-     left: 25px;
+     left: 23px;
      top: 11px;
     fill: var(--accent);
     height: 24px;
