@@ -60,22 +60,21 @@
     #copy-message {color: #ffffff};
 
     .community{
-  background: var(--menu);
-  border: solid 1px #00ac46;
+  background: var(--text);
+  border: solid 0px #565656;
   padding: 10px 20px 10px 20px;
-  color: var(--accent);
+  color: white;
   border-radius: 100px;
   border-color: var(--text);
 }
 
 .community:hover{
   cursor: pointer;
-  background: white;
-  border: solid 1px #00ac46;
+  background: #534741CC;
+  border: solid 0px #534741CC;
   padding: 10px 20px 10px 20px;
-  color: var(--text);
+  color: white;
   border-radius: 100px;
-  border-color: var(--text)
 }
 
     .a{opacity:100%}
