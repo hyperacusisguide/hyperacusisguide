@@ -13,7 +13,7 @@
     --menu: #2A2A2B;
     color-scheme: dark;
 
-    .a{color:var(--text);
+    .a{color:var(--accent);
     font-weight: 500}
     .glow{color:var(--text)}
 
@@ -334,6 +334,7 @@ header .logo i {
 }
 
 .a{
+color: red;
  font-weight: 500;
 }
 
@@ -362,14 +363,18 @@ header .logo i {
   margin-top: -2px;
   font-size: 1.05rem;
 
+  
+
 }
-.guide-word span {
-  display: inline; /* ensures no spacing */
+.guide-word span{
+  display: inline;
+
+  
 }
 
 .glow{
      text-shadow:
-    0 0 20px rgba(255, 255, 255, 0); /* Outer, more diffused glow */
+    0 0 20px rgba(255, 255, 255, 0.2); /* Outer, more diffused glow */
 }
 
 /* ---------- Hamburger Button (Mobile Only) ---------- */
@@ -1169,7 +1174,6 @@ article img.full-width-image:first-child {
         transition: transform 0.3s ease;
         background-color: var(--bg);
         font-size: 1rem;
-       
         z-index: 1100;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
